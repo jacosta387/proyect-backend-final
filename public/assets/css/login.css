@@ -13,13 +13,6 @@ html,body{
 
     }
 
-.content{
-    display: flex; /* Usamos flexbox para centrar horizontal y verticalmente */
-  align-items: center; /* Centramos verticalmente */
-  justify-content: center; /* Centramos horizontalmente */
-  position: relative;
-  width: 100%;
-}
 
 
 
