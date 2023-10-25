@@ -21,12 +21,7 @@ html,body{
   width: 100%;
 }
 
-.div1{
-    position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
+
 
     .card{
     height: 370px;
