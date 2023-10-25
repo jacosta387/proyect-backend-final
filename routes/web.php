@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/anadir', [MyController::class, 'anadir'])->name('anadir');
+Route::get('/biblioteca', [MyController::class, 'biblioteca'])->name('biblioteca');
+Route::get('/categoria', [MyController::class, 'categoria'])->name('categoria');
+Route::get('/busqueda', [MyController::class, 'busqueda'])->name('busqueda');
+Route::get('/manga', [MyController::class, 'manga'])->name('manga');
