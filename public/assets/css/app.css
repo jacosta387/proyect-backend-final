@@ -1,29 +1,45 @@
-body{
+body {
     font-family: 'Abandon';
+    display: flex;
+    flex-direction: column;
+    background-color: #210210;
+}
+#app{
+    flex: 1;
 }
 
-.navbar{
+.navbar {
     background-color: #2b0215 !important;
 }
-
-.navbar-brand{
-    color:#fff !important;
-
+.navbar-brand {
+    color: #fff !important;
 }
-
-.nav-item{
+.nav-item {
     margin-right: 15px;
 }
-.nav-link{
+.nav-link {
     color: #d24d6c !important;
 }
-.container{
+.container {
     margin-left: 0 !important;
 }
-
-.logo{
-
+.logo {
     margin-left: 35px;
 }
+.bd-footer{
+    background-color: #2b0215 !important;
+}
+li,h5{
+    color: aliceblue !important;
+}
+a, .nombreApp{
+    color: #EE2853;
+}
+.small{
+    margin-top: 10px;
+}
 
-
+footer{
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
