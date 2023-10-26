@@ -1,0 +1,21 @@
+.content{
+
+    padding: 200px;
+}
+
+.titulo{
+    color: white ;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
