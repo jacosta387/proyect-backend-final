@@ -1,0 +1,16 @@
+body{
+    background-color: #210210 !important;
+}
+
+.content{
+    margin-top: 10px;
+    height: 100%;
+}
+
+.card{
+    background-color: #8f2f45 !important;
+
+}
+.card-header{
+    color: antiquewhite !important;
+}

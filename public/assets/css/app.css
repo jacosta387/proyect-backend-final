@@ -1,0 +1,29 @@
+body{
+    font-family: 'Abandon';
+}
+
+.navbar{
+    background-color: #2b0215 !important;
+}
+
+.navbar-brand{
+    color:#fff !important;
+
+}
+
+.nav-item{
+    margin-right: 15px;
+}
+.nav-link{
+    color: #d24d6c !important;
+}
+.container{
+    margin-left: 0 !important;
+}
+
+.logo{
+
+    margin-left: 35px;
+}
+
+

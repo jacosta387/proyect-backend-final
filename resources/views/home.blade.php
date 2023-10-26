@@ -1,23 +1,42 @@
+<link rel="stylesheet" href="assets/css/home.css">
+
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="content">
+        <div class="row justify-content-center">
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-header">{{ __('Titulo del card') }}</div>
+                    <div class="card-body">
+                        <img src="assets/img/logo.png" alt="">
+                        <br>
+                        @guest
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
                             {{ session('status') }}
-                        </div>
-                    @endif
+                            {{ __('You are not logged in!') }}
+                        @else
+                            {{ __('Aqui van los cards')}}
+                        @endguest
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-header">{{ __('Titulo del card') }}</div>
+                    <div class="card-body">
+                        <img src="assets/img/logo.png" alt="">
+                        <br>
+                        @guest
 
-                    {{ __('You are logged in!') }}
+                            {{ session('status') }}
+                            {{ __('You are not logged in!') }}
+                        @else
+                            {{ __('Aqui van los cards')}}
+                        @endguest
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

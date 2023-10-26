@@ -18,9 +18,9 @@ class MyController extends Controller{
     {
         return view('busqueda');
     }
-    public function categoria()
+    public function genero()
     {
-        return view('categoria');
+        return view('genero');
     }
     public function manga()
     {
