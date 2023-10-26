@@ -24,6 +24,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/anadir', [MyController::class, 'anadir'])->name('anadir');
 Route::get('/biblioteca', [MyController::class, 'biblioteca'])->name('biblioteca');
-Route::get('/categoria', [MyController::class, 'categoria'])->name('categoria');
+Route::get('/genero', [MyController::class, 'genero'])->name('genero');
 Route::get('/busqueda', [MyController::class, 'busqueda'])->name('busqueda');
 Route::get('/manga', [MyController::class, 'manga'])->name('manga');
