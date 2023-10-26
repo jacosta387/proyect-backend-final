@@ -5,15 +5,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="titulo">
-        <h1>categoria</h1>
-
-
-
-        <div class="titulo">
-            <h2>==========Misterio==========</h2>
-<section>
     <div class="content">
+        <div class="titulo">
+            <h1>categoria</h1>
+
+
+
+            <div class="titulo">
+                <h2>==========Misterio==========</h2>
+    <section>
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
