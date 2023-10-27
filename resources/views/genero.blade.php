@@ -58,8 +58,17 @@
                         <div class="col-md-3">
                             <img src="..\public\assets\img\Yuan Zun.jpg" class="d-block w-100" alt="Imagen 10">
                         </div>
+
+                    </div> <div class="press">
+                        <div class="card" style="width: 18rem;">
+                            <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Emilton lo mama</p>
+                            </div>
+
                         <div class="col-md-3">
                             <img src="..\public\assets\img\Yuan Zun.jpg" class="d-block w-100" alt="Imagen 11">
+
                         </div>
                         <div class="col-md-3">
                             <img src="..\public\assets\img\Yuan Zun.jpg" class="d-block w-100" alt="Imagen 12">
