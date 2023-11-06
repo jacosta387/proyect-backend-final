@@ -110,7 +110,7 @@
             <div class="card" style="width: 18rem;">
                 <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="card-text">Emilton lo mama</p>
+                    <p class="card-text">hola mundo</p>
 
                     <div class="rating-container">
                         <div class="rating">
