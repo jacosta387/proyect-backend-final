@@ -16,6 +16,9 @@ class CreateRegistroLecturaTable extends Migration
             $table->date('fecha_lectura');
             $table->boolean('leido');
             $table->timestamps();
+
+            $table->foreign('id_guardado')->references('id_guardado')->on('guardados');
+            $table->foreign('id_capitulo')->references('id_capitulo')->on('capitulo');
         });
     }
 

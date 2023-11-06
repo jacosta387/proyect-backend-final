@@ -14,6 +14,8 @@ class CreateGuardadosTable extends Migration
             $table->integer('id_manga')->unsigned();
             $table->date('fecha_guardado');
             $table->timestamps();
+
+            $table->foreign('id_manga')->references('id_manga')->on('manga');
         });
     }
 

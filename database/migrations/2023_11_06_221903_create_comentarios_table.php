@@ -16,6 +16,9 @@ class CreateComentariosTable extends Migration
             $table->text('comentario');
             $table->date('fecha_comentario');
             $table->timestamps();
+
+            $table->foreign('id_capitulo')->references('id_capitulo')->on('capitulo');
+            $table->foreign('id_manga')->references('id_manga')->on('manga');
         });
     }
 

@@ -14,6 +14,8 @@ class CreateCalificacionTable extends Migration
             $table->integer('id_usuario')->unsigned();
             $table->integer('calificacion');
             $table->timestamps();
+
+            $table->foreign('id_manga')->references('id_manga')->on('manga');
         });
     }
 
