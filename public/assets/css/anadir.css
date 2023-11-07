@@ -1,3 +1,13 @@
+/* variables de colores tamaños y fuentes */
+:root {
+    --color-background-elements:#2b0215;
+    --color-background:#210210;
+    --color-rosaClaro: #d24d6c;
+    --color-fuccia:#EE2853;
+    --color-textos-blanco: #f0f8ff;
+    --font-size: 16px;
+    --font-family:'Abandon';
+}
 
 /* Estilos para el contenedor del formulario */
 .container1 {
@@ -12,7 +22,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 15px;
-    background-color: #fff;
+    background-color: var(--color-textos-blanco);
 }
 
 /* Estilos para las celdas de la tabla */
@@ -40,8 +50,8 @@ select {
 
 /* Estilos para el botón de envío */
 button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--color-fuccia);
+    color: var(--color-textos-blanco);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -50,7 +60,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: var(--color-fuccia);
 }
 .date-picker {
     display: flex;

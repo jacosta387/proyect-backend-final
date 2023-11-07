@@ -1,14 +1,27 @@
+/* variables de colores tamaños y fuentes */
+:root {
+    --color-background-elements:#2b0215;
+    --color-background:#210210;
+    --color-rosaClaro: #d24d6c;
+    --color-fuccia:#EE2853;
+    --color-textos-blanco: #f0f8ff;
+    --font-size: 16px;
+    --font-family:'Abandon';
+}
+
+
 .content{
     margin-top: 10px;
     height: max-content;
     margin-bottom: 30px;
 }
-.titulo{
-    color: antiquewhite !important;
+.titulo,.descripcion{
+    color: var(--color-textos-blanco) !important;
     margin-left: 10px;
 }
 
 .press {
+
     position: fixed;
     right: 10%; /* Set right position to 10% from the right edge */
     top: 50%; /* Set vertical position to the middle */
@@ -21,7 +34,8 @@
 }
 
 .star {
-    color: #ccc;
+    border: var(--color-background-elements);
+    color: #bbbbbb;
     /* Color inicial (gris) */
     cursor: pointer;
 }
@@ -39,3 +53,21 @@
     margin-right: 10px; /* Add some space between rating and button */
 }
 
+.tags{
+    font-size: small;
+    background-color: var(--color-rosaClaro);
+    width: fit-content;
+    padding-inline: 8px;
+    border-radius: 100px;
+    text-decoration: none;
+}
+
+.btn{
+    background-color: var(--color-fuccia) !important;
+    border-color: var(--color-background-elements) !important;
+}
+
+.tabla-contenido{
+    margin-top: 5%;
+    margin-left: 2%;
+}
