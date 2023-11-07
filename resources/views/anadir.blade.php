@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="assets/css/anadir.css">
 @extends('layouts.app')
-<link rel="stylesheet" href="assets/css/anadir.css">
+
 @section('content')
 
 <h1>anadir</h1>
