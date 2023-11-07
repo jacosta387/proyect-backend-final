@@ -1,6 +1,9 @@
 body{
     background-color: #210210 !important;
 }
+h1{
+    color: antiquewhite !important;
+}
 
 .content{
     margin-top: 10px;

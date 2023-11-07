@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [MyController::class, 'home'])->name('home');
 
 Route::get('/anadir', [MyController::class, 'anadir'])->name('anadir');
 Route::get('/biblioteca', [MyController::class, 'biblioteca'])->name('biblioteca');
