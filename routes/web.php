@@ -27,3 +27,7 @@ Route::get('/biblioteca', [MyController::class, 'biblioteca'])->name('biblioteca
 Route::get('/genero', [MyController::class, 'genero'])->name('genero');
 Route::get('/busqueda', [MyController::class, 'busqueda'])->name('busqueda');
 Route::get('/manga', [MyController::class, 'manga'])->name('manga');
+Route::get('/save-manga',function(){
+    return "Manga Guardado";
+});
+Route::post('/save-manga', [MangaController::class, 'guardar']);

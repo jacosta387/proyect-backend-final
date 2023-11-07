@@ -15,7 +15,7 @@ class CreateCapituloTable extends Migration
             $table->string('nombre');
             $table->timestamps();
 
-            $table->foreign('id_manga')->references('id_manga')->on('manga');
+            $table->foreign('id_manga')->references('id_manga')->on('mangas');
         });
     }
 
