@@ -13,6 +13,7 @@
 
 
 body{
+    color: var(--color-txt-light) !important;
     background-color: var(--color-background)!important;
 }
 h1{
@@ -78,4 +79,27 @@ display: flex;
   .press {
       max-width: 100%; /* En pantallas aún más pequeñas, muestra 1 tarjeta por fila */
   }
+}
+
+.content2 {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.titulo1 {
+  color: var(--color-textos-blanco);
+  text-align: center;
+}
+.content3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/* Estilo para el fondo especial */
+.special-background {
+  background-color: #d24d6c; /* Cambia el color de fondo a naranja o el color que desees */
+  color: white; /* Cambia el color del texto a blanco o el color que desees */
 }
