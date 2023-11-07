@@ -71,15 +71,12 @@
                             </div>
                             <p class="result"><span id="rating"></span></p>
                         </div>
-                        <a href="#" class="btn btn-primary">Agregar</a>
+                        <a href="#" class="btn btn-primary">Agregar a mi lista</a>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
+        <p>Hello world</p>
     </div>
     <script src="assets/js/manga.js"></script>
 @endsection
