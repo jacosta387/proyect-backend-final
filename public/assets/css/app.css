@@ -1,23 +1,35 @@
+/* variables de colores tamaños y fuentes */
+:root {
+    --color-background-elements:#2b0215;
+    --color-background:#210210;
+    --color-rosaClaro: #d24d6c;
+    --color-fuccia:#EE2853;
+    --color-textos-blanco: #f0f8ff;
+    --font-size: 16px;
+    --font-family:'Abandon';
+}
+
+
 body {
-    font-family: 'Abandon';
+    font-family: var(--font-family);
     display: flex;
     flex-direction: column;
-    background-color: #210210;
+    background-color:var(--color-background);
 }
 #app{
     flex: 1;
 }
 .navbar {
-    background-color: #2b0215 !important;
+    background-color: var(--color-background-elements) !important;
 }
 .navbar-brand {
-    color: #fff !important;
+    color: var(--color-textos-blanco) !important;
 }
 .nav-item {
     margin-right: 15px;
 }
 .nav-link {
-    color: #d24d6c !important;
+    color:var(--color-rosaClaro) !important;
 }
 .container {
     margin-left: 0 !important;
@@ -26,13 +38,13 @@ body {
     margin-left: 35px;
 }
 .bd-footer{
-    background-color: #2b0215 !important;
+    background-color: var(--color-background-elements) !important;
 }
 li,h5{
-    color: aliceblue !important;
+    color: var(--color-textos-blanco) !important;
 }
 a, .nombreApp{
-    color: #EE2853;
+    color: var(--color-fuccia);
 }
 .small{
     margin-top: 10px;

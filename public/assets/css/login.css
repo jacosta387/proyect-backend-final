@@ -1,3 +1,15 @@
+/* variables de colores tamaños y fuentes */
+:root {
+    --color-background-elements:#2b0215;
+    --color-background:#210210;
+    --color-rosaClaro: #d24d6c;
+    --color-fuccia:#EE2853;
+    --color-fuccia2:#ff4069;
+    --color-textos-blanco: #f0f8ff;
+    --font-size: 16px;
+    --font-family:'Abandon';
+}
+
 html,body {
     background-image: url('https://www.xtrafondos.com/wallpapers/kanao-tsuyuri-de-kimetsu-no-yaiba-11709.jpg');
     background-size: cover;
@@ -25,7 +37,7 @@ html,body {
 .social_icon span {
     font-size: 60px;
     margin-left: 10px;
-    color: #FFC312;
+    color: var(--color-fuccia2);
 }
 .social_icon{
     width: 10%;

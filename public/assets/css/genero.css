@@ -1,9 +1,20 @@
+/* variables de colores tamaños y fuentes */
+:root {
+    --color-background-elements:#2b0215;
+    --color-background:#210210;
+    --color-rosaClaro: #d24d6c;
+    --color-fuccia:#EE2853;
+    --color-textos-blanco: #f0f8ff;
+    --font-size: 16px;
+    --font-family:'Abandon';
+}
+
 .content {
   padding: 50px;
 }
 
 .titulo {
-  color: white;
+  color: var(--color-textos-blanco);
 }
 
 .carousel-control-prev,
