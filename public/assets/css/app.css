@@ -13,6 +13,7 @@
 
 
 body {
+    color: var(--color-txt-light) !important;
     font-family: var(--font-family);
     display: flex;
     flex-direction: column;

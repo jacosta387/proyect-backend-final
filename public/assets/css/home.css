@@ -13,6 +13,7 @@
 
 
 body{
+    color: var(--color-txt-light) !important;
     background-color: var(--color-background)!important;
 }
 h1{
@@ -90,9 +91,7 @@ display: flex;
       max-width: 100%; /* En pantallas aún más pequeñas, muestra 1 tarjeta por fila */
   }
 }
-.titulo {
-  color: var(--color-textos-blanco);
-}
+
 .content2 {
   border-bottom: 1px solid rgb(255, 255, 255);
   margin-top: 10px;
@@ -114,4 +113,6 @@ display: flex;
 .special-background {
   background-color: #d24d6c; /* Cambia el color de fondo a naranja o el color que desees */
   color: white; /* Cambia el color del texto a blanco o el color que desees */
+
 }
+
