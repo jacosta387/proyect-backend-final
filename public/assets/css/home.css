@@ -24,10 +24,10 @@ h1{
     height: 100%;
 }
 
-.card{
+/* .card{
     background-color: #8f2f45 !important;
 
-}
+} */
 .card-header{
     color: var(--color-txt-light) !important;
 }
