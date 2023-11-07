@@ -26,6 +26,10 @@ class MyController extends Controller{
     {
         return view('manga');
     }
+    public function home()
+    {
+        return view('home');
+    }
 
 
 }

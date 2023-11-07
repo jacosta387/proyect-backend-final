@@ -1,66 +1,27 @@
-.contenedor-capitulos {
-    width: 50%;
-    max-height: 200px;
-    overflow: auto;
-    position: absolute; /* Set position to absolute */
-    left: 0; /* Set left position to 0 (fully left) */
-    top: 50%; /* Set vertical position to the middle */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-}
-table {
-    border-collapse: collapse;
-    width: 100%;
+/* variables de colores tamaños y fuentes */
+:root {
+    --color-background-elements:#2b0215;
+    --color-background:#210210;
+    --color-rosaClaro: #d24d6c;
+    --color-fuccia:#EE2853;
+    --color-textos-blanco: #f0f8ff;
+    --font-size: 16px;
+    --font-family:'Abandon';
 }
 
-th, td {
-    text-align: left;
-    padding: 5px 10px;
-}
 
-th {
-    background-color: #ccc;
+.content{
+    margin-top: 10px;
+    height: max-content;
+    margin-bottom: 30px;
 }
-
-tr {
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+.titulo,.descripcion{
+    color: var(--color-textos-blanco) !important;
+    margin-left: 10px;
 }
-
-td {
-    background-color: #00f;
-}
-.scrollspy-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50%; /* Change width to 50% */
-    background-color: #000000;
-    padding: 10px;
-    float: left; /* Add this to make it float to the left */
-}
-
-.scrollspy-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.scrollspy-nav li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.scrollspy-nav a {
-    text-decoration: none;
-    color: #000;
-}
-
-.scrollspy-nav .active {
-    font-weight: bold;
-}
-
 
 .press {
+
     position: fixed;
     right: 10%; /* Set right position to 10% from the right edge */
     top: 50%; /* Set vertical position to the middle */
@@ -73,7 +34,8 @@ td {
 }
 
 .star {
-    color: #ccc;
+    border: var(--color-background-elements);
+    color: #bbbbbb;
     /* Color inicial (gris) */
     cursor: pointer;
 }
@@ -90,10 +52,22 @@ td {
 .rating-container .rating {
     margin-right: 10px; /* Add some space between rating and button */
 }
-.comment-form {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #f5f5f5;
-    padding: 20px;
-  }
+
+.tags{
+    font-size: small;
+    background-color: var(--color-rosaClaro);
+    width: fit-content;
+    padding-inline: 8px;
+    border-radius: 100px;
+    text-decoration: none;
+}
+
+.btn{
+    background-color: var(--color-fuccia) !important;
+    border-color: var(--color-background-elements) !important;
+}
+
+.tabla-contenido{
+    margin-top: 5%;
+    margin-left: 2%;
+}
