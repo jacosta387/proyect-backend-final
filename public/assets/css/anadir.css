@@ -1,10 +1,12 @@
 /* variables de colores tamaños y fuentes */
 :root {
-    --color-background-elements:#2b0215;
-    --color-background:#210210;
+    --color-background-elements:#210210;
+    --color-background:#2b0215;
     --color-rosaClaro: #d24d6c;
     --color-fuccia:#EE2853;
-    --color-textos-blanco: #f0f8ff;
+    --color-fucsia:#EE2853;
+    --color-txt-light: #f0f8ff;
+    --color-txt-dark:#1a000c;
     --font-size: 16px;
     --font-family:'Abandon';
 }
@@ -22,7 +24,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 15px;
-    background-color: var(--color-textos-blanco);
+    background-color: var(--color-txt-light);
 }
 
 /* Estilos para las celdas de la tabla */
@@ -50,8 +52,8 @@ select {
 
 /* Estilos para el botón de envío */
 button[type="submit"] {
-    background-color: var(--color-fuccia);
-    color: var(--color-textos-blanco);
+    background-color: var(--color-fucsia);
+    color: var(--color-txt-light);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -60,7 +62,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: var(--color-fuccia);
+    background-color: var(--color-fucsia);
 }
 .date-picker {
     display: flex;
