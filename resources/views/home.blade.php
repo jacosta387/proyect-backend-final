@@ -71,72 +71,80 @@
                 </button>
             </div>
         </div>
-            <div class="press-container ">
-                <div class="press">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Descripcion de Manga</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="press ">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Descripcion de Manga</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="press">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Descripcion de Manga</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="press">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Descripcion de Manga</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="press">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Descripcion de Manga</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="press">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Descripcion de Manga</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="press">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Descripcion de Manga</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="press">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Descripcion de Manga</p>
-                        </div>
+        <div class="press-container ">
+            <div class="press">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">PATER NOSTER</p>
                     </div>
                 </div>
             </div>
+            <div class="press ">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">QUI EST IN CAELIS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="press">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">SANCTIFICETUR NOMMEM TUUM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="press">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">FIAT VOLUNTAS TUA,SICUT IN CAELIS, ET IN TERRA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="press">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">PANEM NOSTER, COTIDIANUM DANOBIIS HODIE </p>
+                    </div>
+                </div>
+            </div>
+            <div class="press">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">ET DIMITE NOBIS, DEBITA NOSTRA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="press">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">SICUT ET, DIMITIMUS DEBITORIBUS NOSTRIS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="press">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">ET NE NOS INDUCAS IN TENTATIONEM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="press">
+                <div class="card" style="width: 18rem;">
+                    <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">SED LIBERA NOS AD MALO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         </div>
 
