@@ -18,8 +18,7 @@ h1{
 }
 
 .content{
-    margin-top: 10px;
-    height: 100%;
+  margin: 0px 20px 30px 30px;
 }
 
 /* .card{
@@ -47,23 +46,35 @@ h1{
 }
 
 .carousel-slide {
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
 }
-
+.img-carousel {
+  width: 300px; /* Ancho deseado */
+  height: 500px; /* Altura deseada */
+}
 .press-container {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 10px;
+  padding-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .press {
 display: flex;
   flex-wrap: wrap;
-  margin-left: 20px;
-  margin-top: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   flex: 1;
   max-width: calc(20% - 20px); /* Esto garantiza que haya 4 tarjetas por fila */
+}
+.img-press {
+  width: 100%; /* Ancho deseado */
+  height: 350px; /* Altura deseada */
 }
 
 @media (max-width: 768px) {
@@ -76,4 +87,29 @@ display: flex;
   .press {
       max-width: 100%; /* En pantallas aún más pequeñas, muestra 1 tarjeta por fila */
   }
+}
+.titulo {
+  color: var(--color-textos-blanco);
+}
+.content2 {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.titulo1 {
+  color: var(--color-textos-blanco);
+  text-align: center;
+}
+.content3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+/* Estilo para el fondo especial */
+.special-background {
+  background-color: #d24d6c; /* Cambia el color de fondo a naranja o el color que desees */
+  color: white; /* Cambia el color del texto a blanco o el color que desees */
 }
