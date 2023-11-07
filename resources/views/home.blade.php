@@ -3,9 +3,6 @@
 @section('content')
     <link rel="stylesheet" href="assets/css/home.css">
     <div class="content">
-        <div class="titulo">
-            <h2>Misterio</h2>
-        </div>
 
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -73,12 +70,13 @@
                     <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
+        </div>
             <div class="press-container ">
                 <div class="press">
                     <div class="card" style="width: 18rem;">
                         <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Emilton lo mama</p>
+                            <p class="card-text">Descripcion de Manga</p>
                         </div>
                     </div>
                 </div>
@@ -86,7 +84,7 @@
                     <div class="card" style="width: 18rem;">
                         <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Emilton lo mama</p>
+                            <p class="card-text">Descripcion de Manga</p>
                         </div>
                     </div>
                 </div>
@@ -94,7 +92,7 @@
                     <div class="card" style="width: 18rem;">
                         <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Emilton lo mama</p>
+                            <p class="card-text">Descripcion de Manga</p>
                         </div>
                     </div>
                 </div>
@@ -102,7 +100,7 @@
                     <div class="card" style="width: 18rem;">
                         <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Emilton lo mama</p>
+                            <p class="card-text">Descripcion de Manga</p>
                         </div>
                     </div>
                 </div>
@@ -110,7 +108,7 @@
                     <div class="card" style="width: 18rem;">
                         <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Emilton lo mama</p>
+                            <p class="card-text">Descripcion de Manga</p>
                         </div>
                     </div>
                 </div>
@@ -118,7 +116,7 @@
                     <div class="card" style="width: 18rem;">
                         <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Emilton lo mama</p>
+                            <p class="card-text">Descripcion de Manga</p>
                         </div>
                     </div>
                 </div>
@@ -126,7 +124,7 @@
                     <div class="card" style="width: 18rem;">
                         <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Emilton lo mama</p>
+                            <p class="card-text">Descripcion de Manga</p>
                         </div>
                     </div>
                 </div>
@@ -134,11 +132,13 @@
                     <div class="card" style="width: 18rem;">
                         <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Emilton lo mama</p>
+                            <p class="card-text">Descripcion de Manga</p>
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
-    @endsection
+
+    </div>
+@endsection
