@@ -1,10 +1,12 @@
 /* variables de colores tamaños y fuentes */
 :root {
-    --color-background-elements:#2b0215;
-    --color-background:#210210;
+    --color-background-elements:#210210;
+    --color-background:#2b0215;
     --color-rosaClaro: #d24d6c;
     --color-fuccia:#EE2853;
-    --color-textos-blanco: #f0f8ff;
+    --color-fucsia:#EE2853;
+    --color-txt-light: #f0f8ff;
+    --color-txt-dark:#1a000c;
     --font-size: 16px;
     --font-family:'Abandon';
 }
@@ -14,7 +16,7 @@ body{
     background-color: var(--color-background)!important;
 }
 h1{
-    color:var(--color-textos-blanco) !important;
+    color:var(--color-txt-light) !important;
 }
 
 .content{
@@ -27,7 +29,7 @@ h1{
 
 }
 .card-header{
-    color: var(--color-textos-blanco) !important;
+    color: var(--color-txt-light) !important;
 }
 
 
