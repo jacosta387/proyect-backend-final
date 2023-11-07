@@ -18,7 +18,7 @@ class CreateComentariosTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_capitulo')->references('id_capitulo')->on('capitulo');
-            $table->foreign('id_manga')->references('id_manga')->on('manga');
+            $table->foreign('id_manga')->references('id_manga')->on('mangas');
         });
     }
 
