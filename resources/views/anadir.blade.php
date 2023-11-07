@@ -52,10 +52,10 @@
             </tr>
             <tr>
                 <td>
-                    <label for="imagen">Imagen</label>
+                    <label for="imagen">Link imagenn</label>
                 </td>
                 <td>
-                    <input type="file" name="imagen" id="imagen" required>
+                    <input type="text" name="imagen" id="imagen" required>
                 </td>
             </tr>
         </table>
