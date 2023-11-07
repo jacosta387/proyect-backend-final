@@ -1,64 +1,12 @@
-.contenedor-capitulos {
-    width: 50%;
-    max-height: 200px;
-    overflow: auto;
-    position: absolute; /* Set position to absolute */
-    left: 0; /* Set left position to 0 (fully left) */
-    top: 50%; /* Set vertical position to the middle */
-    transform: translateY(-50%); /* Adjust for vertical centering */
+.content{
+    margin-top: 10px;
+    height: max-content;
+    margin-bottom: 30px;
 }
-table {
-    border-collapse: collapse;
-    width: 100%;
+.titulo{
+    color: antiquewhite !important;
+    margin-left: 10px;
 }
-
-th, td {
-    text-align: left;
-    padding: 5px 10px;
-}
-
-th {
-    background-color: #ccc;
-}
-
-tr {
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-}
-
-td {
-    background-color: #00f;
-}
-.scrollspy-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50%; /* Change width to 50% */
-    background-color: #000000;
-    padding: 10px;
-    float: left; /* Add this to make it float to the left */
-}
-
-.scrollspy-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.scrollspy-nav li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.scrollspy-nav a {
-    text-decoration: none;
-    color: #000;
-}
-
-.scrollspy-nav .active {
-    font-weight: bold;
-}
-
 
 .press {
     position: fixed;
@@ -90,10 +38,4 @@ td {
 .rating-container .rating {
     margin-right: 10px; /* Add some space between rating and button */
 }
-.comment-form {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #f5f5f5;
-    padding: 20px;
-  }
+

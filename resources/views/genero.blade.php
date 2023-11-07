@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="assets/css/genero.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-</script>
 @extends('layouts.app')
 
 @section('content')
+    <link rel="stylesheet" href="assets/css/genero.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
     <div class="content">
         <div class="titulo">
             <h2>Misterio</h2>
@@ -60,28 +60,30 @@
                         </div>
                         <div class="col-md-3">
                             <img src="..\public\assets\img\Yuan Zun.jpg" class="d-block w-100" alt="Imagen 11">
+
                         </div>
                         <div class="col-md-3">
                             <img src="..\public\assets\img\Yuan Zun.jpg" class="d-block w-100" alt="Imagen 12">
                         </div>
+
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
         </div>
         <div class="press-container ">
             <div class="press">
                 <div class="card" style="width: 18rem;">
                     <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Emilton lo mama</p>
+                        <p class="card-text">hola mundo</p>
                     </div>
                 </div>
             </div>
@@ -89,7 +91,7 @@
                 <div class="card" style="width: 18rem;">
                     <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Emilton lo mama</p>
+                        <p class="card-text">hola mundo</p>
                     </div>
                 </div>
             </div>
@@ -97,7 +99,7 @@
                 <div class="card" style="width: 18rem;">
                     <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Emilton lo mama</p>
+                        <p class="card-text">hola mundo</p>
                     </div>
                 </div>
             </div>
@@ -105,7 +107,7 @@
                 <div class="card" style="width: 18rem;">
                     <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Emilton lo mama</p>
+                        <p class="card-text">hola mundo</p>
                     </div>
                 </div>
             </div>
@@ -113,7 +115,7 @@
                 <div class="card" style="width: 18rem;">
                     <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Emilton lo mama</p>
+                        <p class="card-text">hola mundo</p>
                     </div>
                 </div>
             </div>
@@ -121,7 +123,7 @@
                 <div class="card" style="width: 18rem;">
                     <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Emilton lo mama</p>
+                        <p class="card-text">hola mundo</p>
                     </div>
                 </div>
             </div>
@@ -129,7 +131,7 @@
                 <div class="card" style="width: 18rem;">
                     <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Emilton lo mama</p>
+                        <p class="card-text">hola mundo</p>
                     </div>
                 </div>
             </div>
@@ -137,7 +139,7 @@
                 <div class="card" style="width: 18rem;">
                     <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">Emilton lo mama</p>
+                        <p class="card-text">hola mundo</p>
                     </div>
                 </div>
             </div>
