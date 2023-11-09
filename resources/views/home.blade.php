@@ -12,15 +12,14 @@
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" ></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" ></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row">
 
                         <?php
-
                         for ($i=1; $i < 5; $i++) {
                             # code...
                             echo '<div class="col-md-3">';
