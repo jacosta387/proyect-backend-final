@@ -11,7 +11,6 @@ class MangaController extends Controller
     {
        $manga = new Manga;
 
-
        $manga->titulo = $request->input('titulo');
        $manga->id_genero = $request->input('id_genero');
        $manga->descripcion = $request->input('descripcion');
@@ -21,6 +20,7 @@ class MangaController extends Controller
        $manga->link = $request->input('link');
 
        $manga->save();
+
 
        return redirect('/manga'); // Puedes redirigir a donde desees después de guardar
     }

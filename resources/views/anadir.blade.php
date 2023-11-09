@@ -1,9 +1,11 @@
+<link rel="stylesheet" href="assets/css/anadir.css">
 @extends('layouts.app')
 
 @section('content')
 
-<h1>Añadir Manga</h1>
-
+<div class="center-title">
+    <h1>Añadir Manga</h1>
+</div>
 <div class="container1">
     <form action="/proyect-backend-final/public/save-manga" method="POST">
         @csrf <!-- Agrega el token CSRF para protección contra CSRF -->

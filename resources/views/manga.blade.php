@@ -86,19 +86,18 @@
                                 <time class="gp-comment-date-time" itemprop="datePublished" datetime="2023-02-06T08:25:57-05:00">06/02/2023, 8:25 am</time>
                             </div>
                         </div>
+
                         <div class="row comment-body">
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe esse neque nemo veritatis! Tempore corporis doloribus molestiae, voluptate consequatur velit ea possimus soluta? Vitae autem fugit quisquam culpa aspernatur possimus.</p>
                         </div>
+
 
                     </div>
                   </div>
             </div>
 
         </div>
-
-
-
-
+        <p>Hello world</p>
     </div>
     <script src="assets/js/manga.js"></script>
 @endsection
