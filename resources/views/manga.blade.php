@@ -1,17 +1,30 @@
 @extends('layouts.app')
 
-
+@inject('dbController', 'App\Http\Controllers\DBController')
 @inject('mangaController', 'App\Http\Controllers\MangaController')
 @php
     $id=$_GET['manga'];
     $mangas = $mangaController->obtenerMangas();
+    $calificaciones= $dbController->obtenerCalificaciones();
+    $comentarios= $dbController->obtenerComentarios();
+
+    #El manga de esta pestaña se llamará $manga
     foreach ($mangas as $m) {
         if ($m->id_manga==$id) {
             # code...
             $manga=$m;
-
         }
     }
+
+    $calificacionesManga= array();
+    foreach ($calificaciones as $c) {
+        if ($c->id_manga==$id) {
+            # code...
+            $calificacionesManga[]=$c;
+        }
+    }
+
+
 @endphp
 <link rel="stylesheet" href="assets/css/manga.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
