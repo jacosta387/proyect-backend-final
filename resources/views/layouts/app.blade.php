@@ -69,41 +69,33 @@
                     <ul class="navbar-nav me-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero') }}">{{ __('Genero1') }}</a>
+                            <a class="nav-link" href="{{ route('genero') }}">Genero1</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero') }}">{{ __('Genero2') }}</a>
+                            <a class="nav-link" href="{{ route('genero') }}">Genero2</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero') }}">{{ __('Genero3') }}</a>
+                            <a class="nav-link" href="{{ route('genero') }}">Genero3</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero') }}">{{ __('Genero4') }}</a>
+                            <a class="nav-link" href="{{ route('genero') }}">Genero4</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero') }}">{{ __('Genero5') }}</a>
+                            <a class="nav-link" href="{{ route('genero') }}">Genero5</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdownMas" class="nav-link dropdown-toggle" href="#" role="button"
+                            <a id="navbarDropdownMas" class="nav-link dropdown-toggle" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Mas
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('genero') }}" name="g"
-                                    onclick="event.preventDefault();
-                                                 document.getElementById('genero-form').submit();">
-                                    {{ __('Generos x') }}
+                                <a class="dropdown-item" href="{{ route('genero') }}" name="g">
+                                    Generos x
                                 </a>
-                                <a class="dropdown-item" href="{{ route('genero') }} "
-                                    onclick="event.preventDefault();
-                                                 document.getElementById('genero-form').submit();">
-                                    {{ __('Generos x') }}
+                                <a class="dropdown-item" href="{{ route('genero') }} ">
+                                    Generos x
                                 </a>
-
-                                <form id="genero-form" action="{{ route('genero') }}" method="GET" class="d-none">
-                                    @csrf
-                                </form>
                             </div>
                         </li>
                         <li>
@@ -113,10 +105,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-
-
-
-
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -241,6 +229,8 @@
     </footer>
 
 </div>
+
+
 </body>
 
 </html>

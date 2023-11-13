@@ -1,5 +1,8 @@
 @extends('layouts.app')
-
+@inject('mangaController', 'App\Http\Controllers\MangaController')
+@php
+    $mangas = $mangaController->obtenerMangas();
+@endphp
 @section('content')
     <link rel="stylesheet" href="assets/css/home.css">
     <div class="content">
@@ -12,15 +15,14 @@
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" ></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" ></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row">
 
                         <?php
-
                         for ($i=1; $i < 5; $i++) {
                             # code...
                             echo '<div class="col-md-3">';
@@ -126,6 +128,30 @@
                         echo'</div>';
                         }
                         ?>
+            </div>
+            <div>
+                @foreach ($mangas as $manga)
+                    {{-- <div>
+                        <h2>{{ $manga->titulo }}</h2>
+                        <p> <img src={{ $manga->portada }} class="card-img-top" alt="...">';{{ $manga->descripcion }}</p>
+
+                        <!-- Agrega más campos según sea necesario -->
+                    </div> --}}
+                    
+                            <div class="press">
+                                <div class="card" style="width: 18rem;">
+                                    <a href="{{ route('manga') }}">
+                                        <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
+                                    </a>
+                                    <div class="card-body">
+                                        <p class="card-text">{{ $manga->titulo }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                    
+                        
+                @endforeach
             </div>
         </div>
 
