@@ -60,14 +60,7 @@
                     </div>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <label for="publicado">¿Publicado?</label>
-                </td>
-                <td>
-                    <input type="checkbox" name="publicado" id="publicado">
-                </td>
-            </tr>
+            
             <tr>
                 <td>
                     <label for="link">Link del Manga</label>
