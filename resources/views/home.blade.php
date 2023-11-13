@@ -131,12 +131,26 @@
             </div>
             <div>
                 @foreach ($mangas as $manga)
-                    <div>
+                    {{-- <div>
                         <h2>{{ $manga->titulo }}</h2>
                         <p> <img src={{ $manga->portada }} class="card-img-top" alt="...">';{{ $manga->descripcion }}</p>
 
                         <!-- Agrega más campos según sea necesario -->
-                    </div>
+                    </div> --}}
+                    
+                            <div class="press">
+                                <div class="card" style="width: 18rem;">
+                                    <a href="{{ route('manga') }}">
+                                        <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
+                                    </a>
+                                    <div class="card-body">
+                                        <p class="card-text">{{ $manga->titulo }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                    
+                        
                 @endforeach
             </div>
         </div>

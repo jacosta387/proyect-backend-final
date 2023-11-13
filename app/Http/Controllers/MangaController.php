@@ -28,4 +28,9 @@ class MangaController extends Controller
     public function obtenerMangas(){
         return Manga::all();
     }
+    public function listarMangas()
+    {
+        $mangas = Manga::all();
+        return view('tu-vista')->with('mangas', $mangas);
+    }
 }
