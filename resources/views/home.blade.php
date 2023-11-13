@@ -88,19 +88,19 @@
             <div class="titulo">
                 <h2>Te puede interesar</h2>
             </div>
-            <div class="a">
+            <div class="press-container">
                 <?php
                 // Convierte la colección a un array y luego reorganiza aleatoriamente
                 $mangasArray = $mangas->toArray();
                 shuffle($mangasArray);
-                
+
                 // Muestra solo los primeros N mangas aleatorios (ajusta N según sea necesario)
                 $numMangas = min(5, count($mangasArray));
-            
+
                 for ($i = 0; $i < $numMangas; $i++) {
                     $mangaAleatorio = $mangasArray[$i];
                 ?>
-                    <div class="b">
+                    <div class="press">
                         <div class="card" style="width: 18rem;">
                             <a href="{{ route('manga') }}">
                                 <img src="{{ $mangaAleatorio['portada'] }}" class="card-img-top" alt="...">
