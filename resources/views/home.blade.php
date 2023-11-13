@@ -110,7 +110,7 @@
         <div class="titulo">
             <h2>Mas Mangas</h2>
         </div>
-        <div class="a">
+        <div class="press-container">
             @foreach ($mangas as $manga)
                 {{-- <div>
                         <h2>{{ $manga->titulo }}</h2>
@@ -119,7 +119,7 @@
                         <!-- Agrega más campos según sea necesario -->
                     </div> --}}
 
-                <div class="b">
+                <div class="press">
                     <div class="card" style="width: 18rem;">
                         <a href="{{ route('manga') }}">
                             <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
