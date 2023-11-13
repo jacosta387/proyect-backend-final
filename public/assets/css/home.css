@@ -137,6 +137,7 @@ display: flex;
   width: 100%; /* Ancho deseado */
   height: 350px/* Altura deseada */
 }
+
 .a {
   display: flex;
   flex-wrap: wrap;
@@ -146,3 +147,4 @@ display: flex;
 
 }
 /* css para el orden de los mangas agregados */
+
