@@ -66,21 +66,17 @@ h1 {
 .press-container {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
+    padding-top: 10px;
+  }
 
-.press {
-    display: flex;
+  .press {
+  display: flex;
     flex-wrap: wrap;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
     flex: 1;
-    max-width: calc(20% - 20px);
-    /* Esto garantiza que haya 4 tarjetas por fila */
-}
+    max-width: calc(20% - 20px); /* Esto garantiza que haya 4 tarjetas por fila */
+  }
 
 .img-press {
     width: 100%;
