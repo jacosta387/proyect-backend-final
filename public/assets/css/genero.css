@@ -63,3 +63,7 @@ display: flex;
       max-width: 100%; /* En pantallas aún más pequeñas, muestra 1 tarjeta por fila */
   }
 }
+  .card-img-top {
+    width: 100%; /* Ancho deseado */
+    height: 350px; /* Altura deseada */
+  }

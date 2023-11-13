@@ -19,12 +19,15 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/app.css">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -69,19 +72,19 @@
                     <ul class="navbar-nav me-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero') }}">Genero1</a>
+                            <a class="nav-link" href="{{ route('genero',['genero' => '1']) }}">Kodomo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero') }}">Genero2</a>
+                            <a class="nav-link" href="{{ route('genero',['genero' => '2']) }}">Shonen</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero') }}">Genero3</a>
+                            <a class="nav-link" href="{{ route('genero',['genero' => '3']) }}">Shojo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero') }}">Genero4</a>
+                            <a class="nav-link" href="{{ route('genero',['genero' => '4']) }}">Seinen</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero') }}">Genero5</a>
+                            <a class="nav-link" href="{{ route('genero',['genero' => '5']) }}">Josei</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdownMas" class="nav-link dropdown-toggle" role="button"
@@ -154,81 +157,84 @@
 
 
 
-    <footer class="bd-footer ">
-        <div class="container c-footer py-4 py-md-5 px-4 px-md-3 text-body-secondary">
-            <div class="row">
-                <div class="col-lg-3 mb-3">
-                    <img src="assets/img/logo.png" width="40"  alt="">
-                    <span class="fs-5 nombreApp">MangaDex3</span>
-                    <ul class="list-unstyled small">
-                        <li class="mb-2">Designed and built with all the love in the world by the <a
-                                href="/docs/5.3/about/team/">Bootstrap team</a> with the help of <a
-                                href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</li>
-                        <li class="mb-2">Code licensed <a href="https://github.com/twbs/bootstrap/blob/main/LICENSE"
-                                target="_blank" rel="license noopener">MIT</a>, docs <a
-                                href="https://creativecommons.org/licenses/by/3.0/" target="_blank"
-                                rel="license noopener">CC BY 3.0</a>.</li>
-                        <li class="mb-2">Currently v5.3.2.</li>
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2 offset-lg-1 mb-3">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/">Home</a></li>
-                        <li class="mb-2"><a href="/docs/5.3/">Docs</a></li>
-                        <li class="mb-2"><a href="/docs/5.3/examples/">Examples</a></li>
-                        <li class="mb-2"><a href="https://icons.getbootstrap.com/">Icons</a></li>
-                        <li class="mb-2"><a href="https://themes.getbootstrap.com/">Themes</a></li>
-                        <li class="mb-2"><a href="https://blog.getbootstrap.com/">Blog</a></li>
-                        <li class="mb-2"><a href="https://cottonbureau.com/people/bootstrap" target="_blank"
-                                rel="noopener">Swag Store</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2 mb-3">
-                    <h5>Guides</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/docs/5.3/getting-started/">Getting started</a></li>
-                        <li class="mb-2"><a href="/docs/5.3/examples/starter-template/">Starter template</a></li>
-                        <li class="mb-2"><a href="/docs/5.3/getting-started/webpack/">Webpack</a></li>
-                        <li class="mb-2"><a href="/docs/5.3/getting-started/parcel/">Parcel</a></li>
-                        <li class="mb-2"><a href="/docs/5.3/getting-started/vite/">Vite</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2 mb-3">
-                    <h5>Projects</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="https://github.com/twbs/bootstrap" target="_blank"
-                                rel="noopener">Bootstrap 5</a></li>
-                        <li class="mb-2"><a href="https://github.com/twbs/bootstrap/tree/v4-dev" target="_blank"
-                                rel="noopener">Bootstrap 4</a></li>
-                        <li class="mb-2"><a href="https://github.com/twbs/icons" target="_blank"
-                                rel="noopener">Icons</a></li>
-                        <li class="mb-2"><a href="https://github.com/twbs/rfs" target="_blank"
-                                rel="noopener">RFS</a></li>
-                        <li class="mb-2"><a href="https://github.com/twbs/examples/" target="_blank"
-                                rel="noopener">Examples repo</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2 mb-3">
-                    <h5>Community</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="https://github.com/twbs/bootstrap/issues" target="_blank"
-                                rel="noopener">Issues</a></li>
-                        <li class="mb-2"><a href="https://github.com/twbs/bootstrap/discussions" target="_blank"
-                                rel="noopener">Discussions</a></li>
-                        <li class="mb-2"><a href="https://github.com/sponsors/twbs" target="_blank"
-                                rel="noopener">Corporate sponsors</a></li>
-                        <li class="mb-2"><a href="https://opencollective.com/bootstrap" target="_blank"
-                                rel="noopener">Open Collective</a></li>
-                        <li class="mb-2"><a href="https://stackoverflow.com/questions/tagged/bootstrap-5"
-                                target="_blank" rel="noopener">Stack Overflow</a></li>
-                    </ul>
+        <footer class="bd-footer ">
+            <div class="container c-footer py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+                <div class="row">
+                    <div class="col-lg-3 mb-3">
+                        <img src="assets/img/logo.png" width="40" alt="">
+                        <span class="fs-5 nombreApp">MangaDex3</span>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2">Designed and built with all the love in the world by the <a
+                                    href="/docs/5.3/about/team/">Bootstrap team</a> with the help of <a
+                                    href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.
+                            </li>
+                            <li class="mb-2">Code licensed <a
+                                    href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank"
+                                    rel="license noopener">MIT</a>, docs <a
+                                    href="https://creativecommons.org/licenses/by/3.0/" target="_blank"
+                                    rel="license noopener">CC BY 3.0</a>.</li>
+                            <li class="mb-2">Currently v5.3.2.</li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="/">Home</a></li>
+                            <li class="mb-2"><a href="/docs/5.3/">Docs</a></li>
+                            <li class="mb-2"><a href="/docs/5.3/examples/">Examples</a></li>
+                            <li class="mb-2"><a href="https://icons.getbootstrap.com/">Icons</a></li>
+                            <li class="mb-2"><a href="https://themes.getbootstrap.com/">Themes</a></li>
+                            <li class="mb-2"><a href="https://blog.getbootstrap.com/">Blog</a></li>
+                            <li class="mb-2"><a href="https://cottonbureau.com/people/bootstrap" target="_blank"
+                                    rel="noopener">Swag Store</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-2 mb-3">
+                        <h5>Guides</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="/docs/5.3/getting-started/">Getting started</a></li>
+                            <li class="mb-2"><a href="/docs/5.3/examples/starter-template/">Starter template</a>
+                            </li>
+                            <li class="mb-2"><a href="/docs/5.3/getting-started/webpack/">Webpack</a></li>
+                            <li class="mb-2"><a href="/docs/5.3/getting-started/parcel/">Parcel</a></li>
+                            <li class="mb-2"><a href="/docs/5.3/getting-started/vite/">Vite</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-2 mb-3">
+                        <h5>Projects</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap" target="_blank"
+                                    rel="noopener">Bootstrap 5</a></li>
+                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap/tree/v4-dev"
+                                    target="_blank" rel="noopener">Bootstrap 4</a></li>
+                            <li class="mb-2"><a href="https://github.com/twbs/icons" target="_blank"
+                                    rel="noopener">Icons</a></li>
+                            <li class="mb-2"><a href="https://github.com/twbs/rfs" target="_blank"
+                                    rel="noopener">RFS</a></li>
+                            <li class="mb-2"><a href="https://github.com/twbs/examples/" target="_blank"
+                                    rel="noopener">Examples repo</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-lg-2 mb-3">
+                        <h5>Community</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap/issues" target="_blank"
+                                    rel="noopener">Issues</a></li>
+                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap/discussions"
+                                    target="_blank" rel="noopener">Discussions</a></li>
+                            <li class="mb-2"><a href="https://github.com/sponsors/twbs" target="_blank"
+                                    rel="noopener">Corporate sponsors</a></li>
+                            <li class="mb-2"><a href="https://opencollective.com/bootstrap" target="_blank"
+                                    rel="noopener">Open Collective</a></li>
+                            <li class="mb-2"><a href="https://stackoverflow.com/questions/tagged/bootstrap-5"
+                                    target="_blank" rel="noopener">Stack Overflow</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-</div>
+    </div>
 
 
 </body>

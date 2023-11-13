@@ -109,36 +109,7 @@ display: flex;
   margin-left: 20px;
   margin-right: 20px;
 }
-/* css para el orden de los mangas agregados */
-@media (max-width: 768px) {
-  .b{
-      max-width: calc(50% - 20px); /* En pantallas más pequeñas, muestra 2 tarjetas por fila */
-  }
-}
-
-@media (max-width: 480px) {
-  .b{
-      max-width: 100%; /* En pantallas aún más pequeñas, muestra 1 tarjeta por fila */
-  }
-}
-.b{
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  flex: 1;
-  max-width: calc(20% - 20px); 
-}
 .card-img-top {
   width: 100%; /* Ancho deseado */
   height: 350px; /* Altura deseada */
 }
-.a {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-/* css para el orden de los mangas agregados */
