@@ -31,3 +31,4 @@ Route::get('/save-manga',function(){
     return "Manga Guardado";
 });
 Route::post('/save-manga', [MangaController::class, 'guardar']);
+Route::get('/home',['MangaController'::class, 'index']);

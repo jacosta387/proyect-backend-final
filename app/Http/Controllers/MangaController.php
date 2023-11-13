@@ -24,4 +24,8 @@ class MangaController extends Controller
 
        return redirect('/manga'); // Puedes redirigir a donde desees después de guardar
     }
+
+    public function obtenerMangas(){
+        return Manga::all();
+    }
 }

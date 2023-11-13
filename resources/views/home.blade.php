@@ -1,5 +1,8 @@
 @extends('layouts.app')
-
+@inject('mangaController', 'App\Http\Controllers\MangaController')
+@php
+    $mangas = $mangaController->obtenerMangas();
+@endphp
 @section('content')
     <link rel="stylesheet" href="assets/css/home.css">
     <div class="content">
@@ -125,6 +128,16 @@
                         echo'</div>';
                         }
                         ?>
+            </div>
+            <div>
+                @foreach ($mangas as $manga)
+                    <div>
+                        <h2>{{ $manga->titulo }}</h2>
+                        <p> <img src={{ $manga->portada }} class="card-img-top" alt="...">';{{ $manga->descripcion }}</p>
+
+                        <!-- Agrega más campos según sea necesario -->
+                    </div>
+                @endforeach
             </div>
         </div>
 
