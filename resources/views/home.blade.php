@@ -15,8 +15,8 @@
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" ></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" ></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -96,8 +96,8 @@
                         echo '<div class="press">';
                             echo'<div class="card" style="width: 18rem;">';
                                     ?><a href="{{ route('manga') }}"><?php
-                                        echo '<img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">';
-                                    ?></a><?php
+                echo '<img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">';
+                ?></a><?php
                                 echo '<div class="card-body">';
                                     echo '<p class="card-text">Descripcion de Manga</p>';
                                 echo '</div>';
@@ -107,62 +107,29 @@
                         ?>
             </div>
         </div>
-        <div class="mas mt-3">
-            <div class="titulo">
-                <h2>Mas Mangas</h2>
-            </div>
-            <div class="press-container mr-3 ">
-
-                <?php
-                    for ($i=1; $i < 6; $i++) {
-                        # code...
-                        echo '<div class="press">';
-                            echo'<div class="card" style="width: 18rem;">';
-                                    ?><a href="{{ route('manga') }}"><?php
-                                        echo '<img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">';
-                                    ?></a><?php
-                                echo '<div class="card-body">';
-                                    echo '<p class="card-text">Descripcion de Manga</p>';
-                                echo '</div>';
-                            echo '</div>';
-                        echo'</div>';
-                        }
-                        ?>
-            </div>
-            <div>
-                @foreach ($mangas as $manga)
-                    {{-- <div>
+        <div class="titulo">
+            <h2>Mas Mangas</h2>
+        </div>
+        <div class="a">
+            @foreach ($mangas as $manga)
+                {{-- <div>
                         <h2>{{ $manga->titulo }}</h2>
                         <p> <img src={{ $manga->portada }} class="card-img-top" alt="...">';{{ $manga->descripcion }}</p>
 
                         <!-- Agrega más campos según sea necesario -->
                     </div> --}}
-                    
-                            <div class="press">
-                                <div class="card" style="width: 18rem;">
-                                    <a href="{{ route('manga') }}">
-                                        <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
-                                    </a>
-                                    <div class="card-body">
-                                        <p class="card-text">{{ $manga->titulo }}</p>
-                                    </div>
-                                </div>
-                            </div>
 
-                    
-                        
-                @endforeach
-            </div>
+                <div class="b">
+                    <div class="card" style="width: 18rem;">
+                        <a href="{{ route('manga') }}">
+                            <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">{{ $manga->titulo }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
-
-
-    </div>
-
-    </div>
-
-
-
-    </div>
-
     </div>
 @endsection

@@ -30,6 +30,7 @@ table {
     border-collapse: collapse;
     margin: 0 auto;
     justify-content: center;
+
 }
 
 th,
@@ -39,6 +40,7 @@ td {
 
 th {
     text-align: left;
+    
 }
 
 /* Form elements styles */
@@ -48,6 +50,7 @@ textarea {
     width: 100%;
     padding: 5px;
     color: rgb(0, 0, 0);
+    border-radius: 10px;
 }
 
 select {
@@ -55,11 +58,13 @@ select {
     padding: 10px;
     border: 1px solid #ccc;
     color: rgb(0, 0, 0);
+    border-radius: 10px;
 }
 
 /* Checkbox styles */
 input[type="checkbox"] {
     margin-right: 10px;
+    
 }
 
 /* Submit button styles */
@@ -67,11 +72,12 @@ button[type="submit"] {
     background-color: #EE2853;
     color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     margin: 0 auto;
     margin-top: 40px;
+
     
 }
 /* Date picker container styles */
