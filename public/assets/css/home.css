@@ -73,7 +73,8 @@ display: flex;
   margin-top: 10px;
   margin-bottom: 20px;
   flex: 1;
-  max-width: calc(20% - 20px); /* Esto garantiza que haya 4 tarjetas por fila */
+  max-width: calc(20% - 20px); 
+/* Esto garantiza que haya 4 tarjetas por fila */
 }
 .img-press {
   width: 100%; /* Ancho deseado */
@@ -129,10 +130,12 @@ display: flex;
   margin-bottom: 20px;
   flex: 1;
   max-width: calc(20% - 20px); 
+  
+  
 }
 .card-img-top {
   width: 100%; /* Ancho deseado */
-  height: 350px; /* Altura deseada */
+  height: 350px/* Altura deseada */
 }
 .a {
   display: flex;
@@ -140,5 +143,6 @@ display: flex;
   padding-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
+
 }
 /* css para el orden de los mangas agregados */

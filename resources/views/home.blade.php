@@ -88,23 +88,31 @@
             <div class="titulo">
                 <h2>Te puede interesar</h2>
             </div>
-            <div class="press-container mr-3">
-
+            <div class="a">
                 <?php
-                    for ($i=1; $i < 6; $i++) {
-                        # code...
-                        echo '<div class="press">';
-                            echo'<div class="card" style="width: 18rem;">';
-                                    ?><a href="{{ route('manga') }}"><?php
-                echo '<img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">';
-                ?></a><?php
-                                echo '<div class="card-body">';
-                                    echo '<p class="card-text">Descripcion de Manga</p>';
-                                echo '</div>';
-                            echo '</div>';
-                        echo'</div>';
-                        }
-                        ?>
+                // Convierte la colección a un array y luego reorganiza aleatoriamente
+                $mangasArray = $mangas->toArray();
+                shuffle($mangasArray);
+                
+                // Muestra solo los primeros N mangas aleatorios (ajusta N según sea necesario)
+                $numMangas = min(5, count($mangasArray));
+            
+                for ($i = 0; $i < $numMangas; $i++) {
+                    $mangaAleatorio = $mangasArray[$i];
+                ?>
+                    <div class="b">
+                        <div class="card" style="width: 18rem;">
+                            <a href="{{ route('manga') }}">
+                                <img src="{{ $mangaAleatorio['portada'] }}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <p class="card-text">{{ $mangaAleatorio['titulo'] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
         <div class="titulo">
