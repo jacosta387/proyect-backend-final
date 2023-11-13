@@ -16,7 +16,7 @@ class MangaController extends Controller
        $manga->descripcion = $request->input('descripcion');
        $manga->portada = $request->input('portada');
        $manga->fecha_lanzamiento = $request->input('fechaLanzamiento');
-       $manga->publicado = true; // Si fue publicado siempre sera true
+       $manga->publicado = $request->has('publicado'); // Si checkbox está marcado, será true, de lo contrario será false
        $manga->link = $request->input('link');
 
        $manga->save();

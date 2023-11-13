@@ -26,10 +26,11 @@
                 <td>
                     <select name="id_genero" id="id_genero" required>
                         <option value="">Seleccionar género</option>
-                        <option value="1">Aventura</option>
-                        <option value="2">Fantasía</option>
-                        <option value="3">Ciencia Ficción</option>
-                        <option value="4">Drama</option>
+                        <option value="01">Shonen</option>
+                        <option value="02">Isekai</option>
+                        <option value="03">Seinen</option>
+                        <option value="04">Harem</option>
+                        <option value="05">CiberPunk</option>
                         <!-- Agrega más opciones de género según sea necesario -->
                     </select>
                 </td>
