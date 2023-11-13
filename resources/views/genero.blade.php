@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/genero.css">
 
     <div class="content">
+     
         <div class="titulo">
             <h2><?php
             foreach ($generos as $g) {
@@ -24,6 +25,8 @@
 
             ?></h2>
         </div>
+        <hr class="mi-linea"> </hr>
+    </div>
 
         <div class="press-container ">
 
