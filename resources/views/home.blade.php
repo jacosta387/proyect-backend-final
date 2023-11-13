@@ -86,28 +86,58 @@
 
         <div class="interesar    mt-3">
             <div class="titulo">
-                <h2>Mas Mangas</h2>
+                <h2>Te puede interesar</h2>
             </div>
             <div class="press-container">
-                @foreach ($mangas as $manga)
-                    {{-- <div>
+                <?php
+                // Convierte la colección a un array y luego reorganiza aleatoriamente
+                $mangasArray = $mangas->toArray();
+                shuffle($mangasArray);
+
+                // Muestra solo los primeros N mangas aleatorios (ajusta N según sea necesario)
+                $numMangas = min(5, count($mangasArray));
+
+                for ($i = 0; $i < $numMangas; $i++) {
+                    $mangaAleatorio = $mangasArray[$i];
+                ?>
+                    <div class="press">
+                        <div class="card" style="width: 18rem;">
+                            <a href="{{ route('manga') }}">
+                                <img src="{{ $mangaAleatorio['portada'] }}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <p class="card-text">{{ $mangaAleatorio['titulo'] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+        <div class="titulo">
+            <h2>Mas Mangas</h2>
+        </div>
+        <div class="press-container">
+            @foreach ($mangas as $manga)
+                {{-- <div>
                         <h2>{{ $manga->titulo }}</h2>
                         <p> <img src={{ $manga->portada }} class="card-img-top" alt="...">';{{ $manga->descripcion }}</p>
 
                         <!-- Agrega más campos según sea necesario -->
                     </div> --}}
 
-                    <div class="press">
-                        <div class="card" style="width: 18rem;">
-                            <a href="{{ route('manga') }}">
-                                <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
-                            </a>
-                            <div class="card-body">
-                                <p class="card-text">{{ $manga->titulo }}</p>
-                            </div>
+                <div class="press">
+                    <div class="card" style="width: 18rem;">
+                        <a href="{{ route('manga') }}">
+                            <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">{{ $manga->titulo }}</p>
                         </div>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
-    @endsection
+    </div>
+@endsection
