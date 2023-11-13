@@ -1,3 +1,15 @@
+@inject('dbController', 'App\Http\Controllers\DBController')
+<?php
+
+$generos = $dbController->obtenerGeneros();
+$listNames = [];
+foreach ($generos as $gg) {
+    $listNames[] = $gg->nombre_genero;
+    # code...
+}
+
+?>
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -70,37 +82,34 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero',['genero' => '1']) }}">Kodomo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero',['genero' => '2']) }}">Shonen</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero',['genero' => '3']) }}">Shojo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero',['genero' => '4']) }}">Seinen</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('genero',['genero' => '5']) }}">Josei</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdownMas" class="nav-link dropdown-toggle" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Mas
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('genero') }}" name="g">
-                                    Generos x
+                        @for ($i = 0; $i < 5; $i++)
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{{ route('genero', ['genero' => $i + 1]) }}"><?php echo $listNames[$i]; ?>
                                 </a>
-                                <a class="dropdown-item" href="{{ route('genero') }} ">
-                                    Generos x
+                            </li>
+                        @endfor
+
+                        @if (count($listNames) > 5)
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdownMas" class="nav-link dropdown-toggle" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Mas
                                 </a>
-                            </div>
-                        </li>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                                    @for ($i = 5; $i < count($listNames); $i++)
+                                        <a class="dropdown-item" href="{{ route('genero', ['genero' => $i + 1]) }}"
+                                            name="g">
+                                            <?php echo $listNames[$i]; ?>
+                                        </a>
+                                    @endfor
+                                </div>
+                            </li>
+                        @endif
+
+
                         <li>
 
                         </li>
@@ -137,8 +146,7 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
