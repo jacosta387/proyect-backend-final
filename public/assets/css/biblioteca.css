@@ -13,7 +13,7 @@
 
 
  .titulo {
-   color: var(--color-txt-light);
+   color:  var(--color-txt-light);
    padding: 20px;
    margin-top: 20px;
    margin-bottom: 20px;
@@ -22,9 +22,16 @@
  .card {
    display: flex;
    flex-wrap: wrap;
-   padding-top: 10px;
+   box-shadow: var(--color-background);
    margin-top: 0px;
  }
+ .press-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
  .press {
    display: flex;
