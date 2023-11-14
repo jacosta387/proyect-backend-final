@@ -21,7 +21,7 @@
     $usuarios = $dbController->obtenerUsuarios();
     $generos = $dbController->obtenerGeneros();
     $registros = $dbController->obtenerRegistro();
-
+    $capitulo = 0;
 
 
     foreach ($registros as $registro) {

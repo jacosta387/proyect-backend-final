@@ -76,6 +76,9 @@
                         <td>
                             <input type="url" name="link" id="link" class="input-txt" required>
                         </td>
+                        <td class="a">
+                            <label for="link">Link del Manga</label>
+                        </td>
                     </tr>                    
                 </table>
                 <button class="buttonS" type="submit">Guardar</button>
