@@ -11,83 +11,10 @@
 }
 
 html,body {
-    background-image: url('https://www.xtrafondos.com/wallpapers/kanao-tsuyuri-de-kimetsu-no-yaiba-11709.jpg');
+    background-image: url('https://wallpapers.com/images/hd/anime-city-43g4mfdzm6c5jzb8.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
-    font-family: 'Numans', sans-serif;
+    height: fit-content;
+    font-family: var(--font-family);
 }
-.content{
-    height: 100%;
-}
-.c{
-    position: absolute;
-    top: 50%;
-    left: 0;
-  transform: translateY(-50%);
-  width: 100%
-}
-.card{
-
-    background-color: rgba(0,0,0,0.7) !important;
-    }
-
-
-
-.social_icon span {
-    font-size: 60px;
-    margin-left: 10px;
-    color: var(--color-fuccia2);
-}
-.social_icon{
-    width: 10%;
-}
-
-.input-group-prepend span{
-    width: 50px;
-    background-color: var(--color-fuccia2);
-    color: black;
-    border:0 !important;
-}
-input:focus{
-    outline: 0 0 0 0  !important;
-    box-shadow: 0 0 0 0 !important;
-
-    }
-
-
-.social_icon span:hover {
-    color: white;
-    cursor: pointer;
-}
-
-.card-header h1 {
-    color: white;
-}
-
-.social_icon {
-    position: absolute;
-    right: 20px;
-    top: -45px;
-}
-
-.remember{
-    color:  white;
-
-}
-
-.login_btn{
-    color: black;
-    background-color: var(--color-fuccia2) !important;
-    border-color: var(--color-background) !important;
-    width: 100px;
-}
-
-.card-footer{
-    margin-top: 7% !important;
-    background-color: rgba(0,0,0,0.55) !important;
-}
-.links a{
-    color: var(--color-fuccia2);
-    }
 

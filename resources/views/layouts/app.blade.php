@@ -176,7 +176,7 @@ foreach ($generos as $gg) {
         <main class="">
             @yield('content')
         </main>
-        <br>
+        
         <footer class="bd-footer ">
             <div class="container c-footer py-4 py-md-5 px-4 px-md-3 text-body-secondary">
                 <div class="row">
