@@ -11,9 +11,11 @@
 }
 
 html,body {
+
     background-image: url('https://www.xtrafondos.com/wallpapers/kanao-tsuyuri-de-kimetsu-no-yaiba-11709.jpg');
     background-size: cover;
+    background-color: var(--color-background);
     background-repeat: no-repeat;
-    height: 100%;
+    height:fit-content;
     font-family: var(--font-family);
 }
