@@ -157,7 +157,7 @@
                             <span class="star" data-rating="2" onclick="document.getElementById('calificacion-input').value=2;">&#9733;</span>
                             <span class="star" data-rating="3" onclick="document.getElementById('calificacion-input').value=3;">&#9733;</span>
                             <span class="star" data-rating="4" onclick="document.getElementById('calificacion-input').value=4;">&#9733;</span>
-                            <span class="star" data-rating="5" onclick="document.getElementById('calificacion-input').value=5 ;">&#9733;</span>
+                            <span class="star" data-rating="5" onclick="document.getElementById('calificacion-input').value=5;">&#9733;</span>
                         </div>
 
                         <button type="button" id="submit-rating" class="btn btn-primary"
@@ -169,7 +169,7 @@
                     <form action="{{ route('login') }}" method="get" id="login-form"></form>
 
 
-                    <form action="{{ route('guardarCalificacion') }}" method="POST" id="calificacionForm">
+                    <form action="{{ route('guardarCalificacion') }}" method="POST" id="calificacion-form">
                         @csrf
                         <input type="hidden" name="id_manga" value="{{ $id }}">
                         <input type="hidden" name="calificacion" id="calificacion-input" value="1">
