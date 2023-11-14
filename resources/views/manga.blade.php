@@ -23,9 +23,36 @@
             $calificacionesManga[] = $c;
         }
     }
+    
+    function calcularPromediomg($calificacionesManga) {
+    
+    if (!empty($calificacionesManga)) {
+       
+        $suma = array_sum($calificacionesManga);
+        
+        
+        $numCalificaciones = count($calificacionesManga);
+        
+        
+        $promedio = $suma / $numCalificaciones;
+        
+        
+        return $promedio;
+    } else {
+        
+        return "No hay calificaciones para promediar";
+    }
+}
+    $resultado = calcularPromedio($calificaciones);
+
 
     #Variable para almacenar el promedio
-    $promedioCalificacion = 0;
+    $promedioCalificacion = $promedio;
+
+
+
+
+
 
     $comentariosManga = [];
     foreach ($comentarios as $c) {
@@ -57,7 +84,7 @@
                     </div>
                     <div class="col-lg-3 ">
 
-                        {{-- <div class="row cajita">
+                        <div class="row cajita">
                             <div class="col-sm border-right border-left cajoncito">
                                 <div class="row ">
                                     <h5>Votos:</h5>
@@ -75,7 +102,7 @@
                                 </div>
                             </div>
 
-                        </div> --}}
+                        </div>
 
                     </div>
 
