@@ -160,7 +160,11 @@
                     });
                 </script>
                 <p class="result"><span id="rating"></span></p>
-                <a href="#" class="btn btn-primary">Agregar a mi lista</a>
+                <form action="{{ route('añadirALista') }}" method="POST" id="formAñadirALista">
+                    @csrf
+                    <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
+                    <button type="submit" class="btn btn-primary">Agregar a mi lista</button>
+                </form>
 
             </div>
         </div>
