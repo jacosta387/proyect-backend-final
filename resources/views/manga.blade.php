@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 @inject('dbController', 'App\Http\Controllers\DBController')
 @inject('mangaController', 'App\Http\Controllers\MangaController')
 @if ($errors->any())
@@ -17,6 +19,7 @@
     $calificaciones = $dbController->obtenerCalificaciones();
     $comentarios = $dbController->obtenerComentarios();
     $usuarios = $dbController->obtenerUsuarios();
+    $generos = $dbController->obtenerGeneros();
 
     #El manga de esta pestaña se llamará $manga
     // Obtener el manga por ID
@@ -51,6 +54,11 @@
         $arrayUsers[$u->id] = $u->name;
     }
 
+    $nombresGeneros = [];
+    foreach ($generos as $g) {
+        $nombresGeneros[$g->id_genero] = $g->nombre_genero;
+    }
+
 @endphp
 <link rel="stylesheet" href="assets/css/manga.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -61,45 +69,38 @@
         <div class="row mt-5">
             <div class="col col-lg-2 ml-2 ">
                 <div class="card img float-right" style="width: 10rem;">
-                    <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top " alt="...">
+                    <img src="{{ $manga->portada }}" class="card-img-top " alt="...">
                 </div>
 
             </div>
-            <div class="col desc col-lg-6">
+            <div class="col desc col-lg-6 ml-2">
+
                 <div class="titulo row ">
-                    <div class="col">
+                    <div class="col-lg-6 mr-4">
                         <h1>{{ $manga->titulo }}</h1>
-                        <p class="tags">Finalizado</p>
+                        <p class="tags">{{ $nombresGeneros[$manga->id_genero] }}</p>
                     </div>
-                    <div class="col-lg-3 ">
+                    <div class="container-sm col cajon align-items-center caja">
+                        <div class="ml-5 nav flex-row row">
+                            <div class="nav-item col-lg-4 col  border-right mr-0 cajita">
+                                Votos
+                                <br>
+                                {{ $promedioCalificacion }}
 
-                        {{-- <div class="row cajita">
-                            <div class="col-sm border-right border-left cajoncito">
-                                <div class="row ">
-                                    <h5>Votos:</h5>
-                                </div>
-                                <div class="row">
-                                    <p>{{ $promedioCalificacion }}</p>
-                                </div>
                             </div>
-                            <div class="col-sm border-right cajoncito">
-                                <div class="row">
-                                    <h5>Capitulos:</h5>
-                                </div>
-                                <div class="row">
-                                    <p>{{ $promedioCalificacion }}</p>
-                                </div>
+                            <div class="nav-item col-lg-4 col   cajita">
+                                Caps
+                                <br>
+                                {{ $manga->capitulos }}
+
                             </div>
-
-                        </div> --}}
-
+                        </div>
                     </div>
+
 
                 </div>
-                <div class="descripcion row">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque fugit quis accusamus labore? Ut cumque
-                    impedit qui recusandae similique, suscipit fugit minima mollitia voluptas, modi reprehenderit quas ea
-                    aliquid saepe.
+                <div class="descripcion row ml-3">
+                    {{ $manga->descripcion }}
                 </div>
             </div>
             <div class="col mt-5">
@@ -157,8 +158,8 @@
         </div>
 
         <div class="row mt-5">
-
-            <div class="col-lg-5 tabla-contenido ">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3 tabla-contenido ">
                 <table class="table table-rounded bkgTable">
                     <thead>
                         <tr class="text-center">
@@ -168,19 +169,20 @@
                     </thead>
                     <tbody class="table-group-divider">
 
-                        <?php
-                        for ($i = 1; $i <= 20; $i++) {
-                            echo '<tr>';
-                            echo '<th scope="row">' . $i . '</th>';
-                            echo '<td>Capitulo ' . $i . '</td>';
-                            echo '<td class=""><input class="form-check-input ml-2" type="checkbox" value="" id="flexCheckDefault"></td>';
-                            echo '</tr>';
-                        }
-                        ?>
+                        @for ($i = 1; $i <= $manga->capitulos; $i++)
+                            <tr>
+                                <th scope="row">{{ $i }}</th>
+                                <td>Capitulo {{ $i }} </td>
+                                <td><input class="form-check-input ml-2" type="checkbox" value=""
+                                        id="flexCheckDefault"></td>
+                            </tr>
+                        @endfor
+
 
                     </tbody>
                 </table>
             </div>
+            <div class="col-lg-1"></div>
             <div class="col">
                 <h3>Comentarios</h3>
                 <form action="{{ route('guardarComentario') }}" method="POST">
@@ -192,31 +194,31 @@
                     <button type="submit" class="btn btn-primary">Enviar comentario</button>
                 </form>
                 <!-- Comentarios -->
-                            <div class="comment-section">
-                                <!-- Comentarios -->
-                                @if (count($comentariosManga) > 0)
-                                    @foreach (array_reverse($comentariosManga) as $comentario)
-                                        <div class="comment-container mr-4 ml-4 mt-1">
-                                            <div class="row comment-head">
-                                                <div class="gp-comment-meta">
-                                                    <span class="gp-comment-author"
-                                                        itemprop="author">{{ $arrayUsers[$comentario->id_usuario] }}</span>
-                                                    <br>
-                                                    <time class="gp-comment-date-time" itemprop="datePublished"
-                                                        datetime="{{ $comentario->created_at }}">{{ $comentario->created_at }}</time>
-                                                </div>
-                                            </div>
-                                            <div class="row comment-body">
-                                                <p>{{ $comentario->comentario }}</p>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                @else
-                                <p>No se encontron comentarios</p>
-                                @endif
+                <div class="comment-section">
+                    <!-- Comentarios -->
+                    @if (count($comentariosManga) > 0)
+                        @foreach (array_reverse($comentariosManga) as $comentario)
+                            <div class="comment-container mr-4 ml-4 mt-1">
+                                <div class="row comment-head">
+                                    <div class="gp-comment-meta">
+                                        <span class="gp-comment-author"
+                                            itemprop="author">{{ $arrayUsers[$comentario->id_usuario] }}</span>
+                                        <br>
+                                        <time class="gp-comment-date-time" itemprop="datePublished"
+                                            datetime="{{ $comentario->created_at }}">{{ $comentario->created_at }}</time>
+                                    </div>
+                                </div>
+                                <div class="row comment-body">
+                                    <p>{{ $comentario->comentario }}</p>
+                                </div>
                             </div>
-                    </div>
-
+                        @endforeach
+                    @else
+                        <p>No se encontron comentarios</p>
+                    @endif
+                </div>
             </div>
-            <script src="assets/js/manga.js"></script>
-        @endsection
+
+        </div>
+        <script src="assets/js/manga.js"></script>
+    @endsection

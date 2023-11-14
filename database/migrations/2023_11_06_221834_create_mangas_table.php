@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('titulo');
             $table->integer('id_genero')->unsigned();
             $table->text('descripcion');
+            $table->integer('capitulos');
             $table->string('portada');
             $table->date('fecha_lanzamiento');
             $table->boolean('publicado');
