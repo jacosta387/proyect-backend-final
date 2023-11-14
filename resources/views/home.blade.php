@@ -6,14 +6,9 @@
 @section('content')
     <link rel="stylesheet" href="assets/css/home.css">
     <div class="content">
-
-        <div class="titulo">
-            <h2>Favoritos del mes</h2>
-        </div>
-
         <div class="container mt-5">
             <h2>Barra de Búsqueda</h2>
-            <form action="search.php" method="GET">
+            <form action="{{ route('busqueda') }}" method="GET">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Buscar..." name="query">
                     <div class="input-group-append">
@@ -21,11 +16,13 @@
                     </div>
                 </div>
             </form>
-    
-            <!-- Mostrar resultados aquí -->
-            <div id="resultados"></div>
         </div>
-    
+
+        <div class="titulo">
+            <h2>Favoritos del mes</h2>
+        </div>
+
+
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
@@ -114,16 +111,16 @@
                 for ($i = 0; $i < $numMangas; $i++) {
                     $mangaAleatorio = $mangasArray[$i];
                 ?>
-                    <div class="press">
-                        <div class="card" style="width: 18rem;">
-                            <a href="{{ route('manga',['manga' => $mangaAleatorio['id_manga']]) }}">
-                                <img src="{{ $mangaAleatorio['portada'] }}" class="card-img-top" alt="...">
-                            </a>
-                            <div class="card-body">
-                                <p class="card-text">{{ $mangaAleatorio['titulo'] }}</p>
-                            </div>
+                <div class="press">
+                    <div class="card" style="width: 18rem;">
+                        <a href="{{ route('manga', ['manga' => $mangaAleatorio['id_manga']]) }}">
+                            <img src="{{ $mangaAleatorio['portada'] }}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <p class="card-text">{{ $mangaAleatorio['titulo'] }}</p>
                         </div>
                     </div>
+                </div>
                 <?php
                 }
                 ?>
@@ -143,7 +140,7 @@
 
                 <div class="press">
                     <div class="card" style="width: 18rem;">
-                        <a href="{{ route('manga',['manga' => $manga->id_manga]) }}">
+                        <a href="{{ route('manga', ['manga' => $manga->id_manga]) }}">
                             <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
