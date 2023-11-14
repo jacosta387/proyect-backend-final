@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="assets/css/genero.css">
 
     <div class="content">
-     
+
         <div class="titulo">
             <h2><?php
             foreach ($generos as $g) {
@@ -32,7 +32,7 @@
 
             @foreach ($mangas as $manga)
 
-                {{-- <div>
+                {{-- <div>  
                         <h2>{{ $manga->titulo }}</h2>
                         <p> <img src={{ $manga->portada }} class="card-img-top" alt="...">';{{ $manga->descripcion }}</p>
 
