@@ -1,9 +1,23 @@
 <link rel="stylesheet" href="assets/css/register.css">
 <link rel="stylesheet" href="assets/css/auth.css">
 @extends('layouts.app')
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+</script>
 @section('content')
     <div class="content mt-5 mb-5">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+    </ul>
         <div class="row justify-content-center c mt-5 c mb-4">
             <div class="col-md-3">
                 <div class="card">
@@ -119,4 +133,5 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 @endsection

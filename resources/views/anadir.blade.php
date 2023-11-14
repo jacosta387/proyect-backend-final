@@ -11,8 +11,9 @@
 @endif
 @section('content')
     <div class="content">
+        
         <br>
-     
+
         <div class="container1">
             <form action="/proyect-backend-final/public/save-manga" method="POST">
                 @csrf <!-- Agrega el token CSRF para protección contra CSRF -->
@@ -21,7 +22,7 @@
                     <tr>
                         <td class="a">
                             <label for="titulo">Título del Manga</label>
-                        </td> 
+                        </td>
                         <td>
                             <input class="input-txt" type="text" name="titulo" id="titulo" required>
                         </td>
@@ -76,8 +77,8 @@
                         <td>
                             <input type="url" name="link" id="link" class="input-txt" required>
                         </td>
-                        
-                    </tr>    
+
+                    </tr>
                     <tr>
                         <td class="a">
                             <label for="link">Numero de Capitulo</label>
@@ -85,8 +86,8 @@
                         <td>
                             <input class="input-txt" type="number" name="capitulos" id="capitulo" required>
                         </td>
-                        
-                    </tr>                    
+
+                    </tr>
                 </table>
                 <button class="buttonS" type="submit">Guardar</button>
             </form>
