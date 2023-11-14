@@ -18,6 +18,7 @@ class MangaController extends Controller
         'fechaLanzamiento' => 'required|date',
         'publicado' => 'boolean', // Asegura que el valor de 'publicado' sea un booleano
         'link' => 'required|string|max:255',
+        'capitulos' => 'required|integer'
     ], [
         'titulo.required' => 'El campo título es obligatorio.',
         'id_genero.required' => 'El campo género es obligatorio.',
@@ -35,6 +36,7 @@ class MangaController extends Controller
     $manga->fecha_lanzamiento = $request->input('fechaLanzamiento');
     $manga->publicado = $request->boolean('publicado');
     $manga->link = $request->input('link');
+    $manga->capitulos = $request->input('capitulos');
 
     $manga->save();
 

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('fecha_lanzamiento');
             $table->boolean('publicado');
             $table->string('link');
+            $table->integer('capitulos');
             $table->timestamps();
 
             //$table->foreign('id_genero')->references('id_genero')->on('genero');

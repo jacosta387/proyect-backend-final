@@ -10,6 +10,7 @@ use App\Models\Guardado;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Registro_lectura;
 
 
 class DBController extends Controller
@@ -107,5 +108,32 @@ class DBController extends Controller
             return redirect()->route('login');
         }
     }
+    public function registroLectura(Request $request){
+        if (Auth::check()) {
+            $idUsuario = Auth::id();
+            $idManga = $request->input('id_manga');
+            $idCapitulo = $request->input('id_capitulo');
+
+            // Busca un registro existente para el usuario y el manga
+            $registro = Registro_lectura::where('id_usuario', $idUsuario)
+                                ->where('id_manga', $idManga)
+                                ->first();
+
+            // Si no existe, crea un nuevo registro
+            if (!$registro) {
+                $registro = new Registro_lectura;
+                $registro->id_usuario = $idUsuario;
+                $registro->id_manga = $idManga;
+            }
+
+            // Actualiza el campo id_capitulo
+            $registro->id_capitulo = $idCapitulo;
+            $registro->save();
+
+            return back()->with('success', 'Registro Guardado.');
+        } else {
+            return redirect()->route('login');
+        }
+}
 
 }

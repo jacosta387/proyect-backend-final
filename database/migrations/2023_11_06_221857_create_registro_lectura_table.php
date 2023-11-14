@@ -11,14 +11,15 @@ class CreateRegistroLecturaTable extends Migration
         Schema::create('registro_lectura', function (Blueprint $table) {
             $table->increments('id_lectura');
             $table->integer('id_usuario')->unsigned();
-            $table->integer('id_guardado')->unsigned();
+            // $table->integer('id_guardado')->unsigned();
+            $table->integer('id_manga')->unsigned; 
             $table->integer('id_capitulo')->unsigned();
-            $table->date('fecha_lectura');
-            $table->boolean('leido');
+            // $table->date('fecha_lectura');
+            // $table->boolean('leido');
             $table->timestamps();
 
-            $table->foreign('id_guardado')->references('id_guardado')->on('guardados');
-            $table->foreign('id_capitulo')->references('id_capitulo')->on('capitulo');
+            // $table->foreign('id_guardado')->references('id_guardado')->on('guardados');
+            // $table->foreign('id_capitulo')->references('id_capitulo')->on('capitulo');
         });
     }
 

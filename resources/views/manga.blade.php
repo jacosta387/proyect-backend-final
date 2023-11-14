@@ -222,11 +222,36 @@
                                 {{ $i }}
                             </div>
                             <div class="col col-lg-5">Capitulo {{ $i }}</div>
-                            <div class="col col-lg-2"><input class="form-check-input ml-2 checkbox" type="checkbox"
-                                    value="{{ $i }}" id="flexCheckDefault" data-value="{{$i}}"></div>
+                            <div class="col col-lg-2">
+                                <input class="form-check-input ml-2 checkbox" type="checkbox"
+                                       value="{{ $i }}" id="flexCheckDefault{{$i}}" data-value="{{$i}}">
+                            </div>
                         </div>
                     @endfor
                 </form>
+                
+                <form action="{{ route('registroLectura') }}" method="POST" id="formAñadirALista">
+                    @csrf
+                    <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
+                    <input type="hidden" name="id_capitulo" id="inputIdCapitulo" value="">
+                    <button type="submit" class="btn btn-primary">Guardar Registro</button>
+                </form>
+                
+                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+                        $("#formAñadirALista").submit(function (event) {
+                            var maxChecked = Math.max.apply(null, $(".checkbox:checked").map(function () {
+                                return parseInt($(this).data("value"));
+                            }).get());
+                
+                            $("#inputIdCapitulo").val(maxChecked);
+                
+                            return true;
+                        });
+                    });
+                </script>
+                
 
 
                 </tbody>
