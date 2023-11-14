@@ -83,7 +83,7 @@
                             <label for="link">Numero de Capitulo</label>
                         </td>
                         <td>
-                            <input class="input-txt" type="text" name="numero-cap" id="portada" required>
+                            <input class="input-txt" type="number" name="capitulos" id="capitulo" required>
                         </td>
                         
                     </tr>                    
