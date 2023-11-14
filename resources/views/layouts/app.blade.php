@@ -58,6 +58,7 @@ foreach ($generos as $gg) {
 
 
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/general.css">
 </head>
 
 <body>

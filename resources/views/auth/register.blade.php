@@ -1,11 +1,12 @@
+<link rel="stylesheet" href="assets/css/register.css">
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="content">
+    <div class="row justify-content-center c">
+        <div class="col-md-3">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Registro') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

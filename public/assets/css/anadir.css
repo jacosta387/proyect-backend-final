@@ -1,15 +1,5 @@
 /* variables de colores tamaños y fuentes */
-:root {
-    --color-background-elements:#210210;
-    --color-background:#2b0215;
-    --color-rosaClaro: #d24d6c;
-    --color-fuccia:#EE2853;
-    --color-fucsia:#EE2853;
-    --color-txt-light: #f0f8ff;
-    --color-txt-dark:#1a000c;
-    --font-size: 16px;
-    --font-family:'Abandon';
-}
+
 .center-title {
     text-align: center;
     margin: 0 auto;
@@ -40,7 +30,7 @@ td {
 
 th {
     text-align: left;
-    
+
 }
 
 /* Form elements styles */
@@ -64,12 +54,12 @@ select {
 /* Checkbox styles */
 input[type="checkbox"] {
     margin-right: 10px;
-    
+
 }
 
 /* Submit button styles */
 button[type="submit"] {
-    background-color: #EE2853;
+    background-color:var(--color-rosaClaro);
     color: white;
     padding: 10px 20px;
     border-radius: 10px;
@@ -78,7 +68,7 @@ button[type="submit"] {
     margin: 0 auto;
     margin-top: 40px;
 
-    
+
 }
 /* Date picker container styles */
 .date-picker {

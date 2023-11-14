@@ -32,6 +32,17 @@ html,body {
     background-color: rgba(0,0,0,0.7) !important;
     }
 
+
+
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    color: var(--color-fuccia2);
+}
+.social_icon{
+    width: 10%;
+}
+
 .input-group-prepend span{
     width: 50px;
     background-color: var(--color-fuccia2);
@@ -45,6 +56,10 @@ input:focus{
     }
 
 
+.social_icon span:hover {
+    color: white;
+    cursor: pointer;
+}
 
 .card-header h1 {
     color: white;
