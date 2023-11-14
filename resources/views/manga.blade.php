@@ -32,7 +32,7 @@
         }
 
     }
-    
+
 
 
     #El manga de esta pestaña se llamará $manga
@@ -236,16 +236,16 @@
                         @csrf
                         <label for="id_capitulo">Capitulo:</label>
                         <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
-                        <input type="number" value="{{ $capitulo }}" name="id_capitulo" id="id_capitulo"
-                            >
+                        <input type="number" value="{{ $capitulo }}" name="id_capitulo" id="id_capitulo" min="0" max="{{$manga->capitulos}}">
                         <button type="submit" class="btn btn-primary" class="mt-6">Guardar</button>
                     </form>
+
                 </div>
                 <div class=" r1">
                     Tu progreso
                     <div class="progress">
                         <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" role="progressbar" style="width: {{$porcentaje}}%" aria-valuenow="{{$porcentaje}}"
-                            aria-valuemin="0" aria-valuemax="100">{{$porcentaje}}</div>
+                            aria-valuemin="0" aria-valuemax="100">{{$porcentaje}}%</div>
 
                     </div>
 
