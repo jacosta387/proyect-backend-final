@@ -1,4 +1,7 @@
 
+body{
+  overflow-x: hidden;
+}
   .titulo {
     color: var(--color-txt-light) !important;
     margin:2rem !important;

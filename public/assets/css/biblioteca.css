@@ -1,6 +1,8 @@
  /* variables de colores tamaños y fuentes */
 
-
+body{
+  overflow-x: hidden;
+}
 
  .titulo {
    color:  var(--color-txt-light);

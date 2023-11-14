@@ -11,7 +11,9 @@
     --font-family: 'Abandon';
 }
 
-
+body{
+    overflow-x: hidden;
+}
 .content {
     margin-top: 10px;
     height: max-content;

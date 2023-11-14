@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/general.css">
     <div class="content">
+        <h2>Favoritos del mes</h2>
         <div class="titulo">
-            <h2>Favoritos del mes</h2>
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -22,7 +22,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active  ">
                         <div class="row">
-                            @for ($i = 0; $i < 4; $i++)
+                            @for ($i = 0; $i < 5; $i++)
                                 @php
                                     $mangaAleatorio = [];
                                     for ($i = 0; $i < 5; $i++) {
@@ -43,7 +43,7 @@
                     </div>
                     <div class="carousel-item active ">
                         <div class="row">
-                            @for ($i = 0; $i < 4; $i++)
+                            @for ($i = 0; $i < 5; $i++)
                                 @php
                                     $mangaAleatorio = [];
                                     for ($i = 0; $i < 5; $i++) {
@@ -64,7 +64,7 @@
                     </div>
                     <div class="carousel-item active ">
                         <div class="row">
-                            @for ($i = 0; $i < 4; $i++)
+                            @for ($i = 0; $i < 5; $i++)
                                 @php
                                     $mangaAleatorio = [];
                                     for ($i = 0; $i < 5; $i++) {
@@ -101,7 +101,7 @@
     </div>
 
 
-    <div class="interesar   mt-3">
+    <div class="interesar mt-3 mr-5">
         <div class="titulo">
             <h2>Te puede interesar</h2>
         </div>
@@ -133,7 +133,7 @@
         </div>
     </div>
 
-    <div class="mas mt-3">
+    <div class="mas mt-3 mr-5">
         <div class="titulo">
             <h2>Mas Mangas</h2>
         </div>
