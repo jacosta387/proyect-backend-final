@@ -173,7 +173,7 @@
                     <form action="{{ route('login') }}" method="get" id="login-form"></form>
 
 
-                    <form action="{{ route('guardarCalificacion') }}" method="POST" id="calificacion-form">
+                    <form action="{{ route('guardarCalificacion') }}" method="POST" id="calificacionForm">
                         @csrf
                         <input type="hidden" name="id_manga" value="{{ $id }}">
                         <input type="hidden" name="calificacion" id="calificacion-input" value="1">

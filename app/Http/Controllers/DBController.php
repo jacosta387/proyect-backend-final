@@ -104,7 +104,6 @@ class DBController extends Controller
             $guardado = new Guardado;
             $guardado->id_usuario = $idUsuario;
             $guardado->id_manga = $idManga;
-            $guardado->fecha_guardado = date("Y-m-d");
             $guardado->save();
 
             return back()->with('success', 'Manga agregado a tu lista.');
