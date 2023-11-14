@@ -37,17 +37,18 @@
     <div class="titulo">
         <h2>Lista de Lectura</h2>
         <hr class="hr" />
+
         @foreach ($arrayMangas as $manga)
-            <div class="press">
-                <div class="card" style="width: 18rem;">
-                    <a href="{{ route('manga', ['manga' => $manga->id_manga]) }}">
-                        <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">{{ $manga->titulo }}</p>
-                    </div>
+        <div class="press">
+            <div class="card" style="width: 18rem;">
+                <a href="{{ route('manga',['manga' => $manga->id_manga]) }}">
+                    <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <p class="card-text">{{ $manga->titulo }}</p>
                 </div>
             </div>
+        </div>  
         @endforeach
     </div>
 @endsection

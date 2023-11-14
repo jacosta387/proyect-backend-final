@@ -26,19 +26,23 @@
 }
 
 .cajita {
-    height: 50%;
-    opacity: 50%;
-    text-align: center;
-    width: 8em !important;
-    display: inline-block !important;
-}
 
-.cajoncito {
-    width: fit-content !important;
+    opacity: 50% !important;
+    text-align: center !important;
+    padding-left: 10px;
 
 
 }
 
+.cajon{
+
+    justify-content: center;
+    align-items: center !important;
+
+}
+.caja{
+    align-items: center;
+}
 h5 {
     font-size: smaller !important;
     color: var(--color-txt-secundary-light);
@@ -159,4 +163,15 @@ time {
     border-radius: 20px;
 
 }
+#comment-section {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 20px;
+}
 
+/* Estilo para cada comentario en la lista */
+#comment-section .comment-container li {
+    color: #000000; /* Texto blanco */
+    background-color: #ffffff;
+    margin-bottom: 10px;
+}
