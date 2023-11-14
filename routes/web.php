@@ -38,3 +38,4 @@ Route::get('/home',function () {
 });
 
 Route::post('/guardarComentario', [DBController::class, 'guardarComentario'])->name('guardarComentario');
+Route::post('/guardarCalificacion', [DBController::class, 'guardarCalificacion'])->name('guardarCalificacion');
