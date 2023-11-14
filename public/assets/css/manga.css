@@ -40,6 +40,11 @@
     align-items: center !important;
 
 }
+
+a{
+    justify-content: center;
+    align-items: center !important;
+}
 .caja{
     align-items: center;
 }
