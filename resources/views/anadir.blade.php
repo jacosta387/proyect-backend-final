@@ -12,27 +12,25 @@
 @section('content')
     <div class="content">
         <br>
-        <div class="center-title">
-            <h1>Añadir Manga</h1>
-        </div>
+     
         <div class="container1">
             <form action="/proyect-backend-final/public/save-manga" method="POST">
                 @csrf <!-- Agrega el token CSRF para protección contra CSRF -->
 
                 <table>
                     <tr>
-                        <td>
+                        <td class="a">
                             <label for="titulo">Título del Manga</label>
-                        </td>
+                        </td> 
                         <td>
                             <input class="input-txt" type="text" name="titulo" id="titulo" required>
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="a">
                             <label for="id_genero">Género</label>
                         </td>
-                        <td>
+                        <td class="a">
                             <select name="id_genero" id="id_genero" required>
                                 <option value="">Seleccionar género</option>
                                 <option value="01">Shonen</option>
@@ -45,26 +43,26 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="a">
                             <label for="descripcion">Descripción</label>
                         </td>
-                        <td>
+                        <td class="a">
                             <textarea name="descripcion" id="descripcion" required></textarea>
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="a">
                             <label for="portada">Link de la Portada</label>
                         </td>
-                        <td>
+                        <td class="a">
                             <input class="input-txt" type="text" name="portada" id="portada" required>
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td class="a">
                             <label for="fechaLanzamiento">Fecha de Lanzamiento</label>
                         </td>
-                        <td>
+                        <td class="a">
                             <div class="date-picker">
                                 <input type="date" name="fechaLanzamiento" id="fechaLanzamiento" required>
                             </div>
@@ -72,13 +70,13 @@
                     </tr>
 
                     <tr>
-                        <td>
+                        <td class="a">
                             <label for="link">Link del Manga</label>
                         </td>
                         <td>
-                            <input type="text" name="link" id="link" required>
+                            <input type="url" name="link" id="link" class="input-txt" required>
                         </td>
-                    </tr>
+                    </tr>                    
                 </table>
                 <button class="buttonS" type="submit">Guardar</button>
             </form>

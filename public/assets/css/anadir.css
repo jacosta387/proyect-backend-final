@@ -1,83 +1,105 @@
-/* variables de colores tamaños y fuentes */
+/* Variables de colores, tamaños y fuentes */
+:root {
+    --color-background-elements:#210210;
+    --color-background:#2b0215;
+    --color-rosaClaro: #d24d6c;
+    --color-fuccia:#EE2853;
+    --color-fucsia:#EE2853;
+    --color-txt-light: #f0f8ff;
+    --color-txt-dark:#1a000c;
+    --font-size: 16px;
+    --font-family:'Abandon';
+}
 
+body{
+    font-family: var(--font-family);
+}
 .center-title {
     text-align: center;
     margin: 0 auto;
+    color: blue;
 }
+
 /* Form container styles */
 .container1 {
-    width: 100%;
+    width: 40%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px;
     margin-top: 40px;
-    justify-content: center;
-    background-color: #2b0215;
+    background-color: rgba(0, 0, 0, 0.5); /* Cambié el color de fondo y añadí un canal alfa (transparencia) */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 /* Table styles */
 table {
-    width: 40%;
+    width: 100%;
     border-collapse: collapse;
-    margin: 0 auto;
-    justify-content: center;
-
+    margin-top: 20px;
+    color: rgb(255, 255, 255);
+    font-family: var(--font-family);
 }
 
-th,
-td {
-    padding: 8px;
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid var(--color-borde);
+
+    
 }
 
 th {
     text-align: left;
-
 }
 
 /* Form elements styles */
 .input-txt,
 input[type="date"],
-textarea {
-    width: 100%;
-    padding: 5px;
-    color: rgb(0, 0, 0);
-    border-radius: 10px;
-}
-
-select {
+textarea,
+select,
+input[type="url"] { /* Estilo para el campo de enlace */
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    color: rgb(0, 0, 0);
-    border-radius: 10px;
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-family: var(--font-family);
 }
 
 /* Checkbox styles */
 input[type="checkbox"] {
     margin-right: 10px;
-
 }
 
 /* Submit button styles */
 .buttonS {
-    background-color:var(--color-rosaClaro);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
+    background-color: var(--color-fucsia);
+    font-size: var(--font-size-);
+    color: var(--color-txt-light);
+    padding: 20px 45px;
+    border: none;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 40px;
-
-
+    margin-top: 20px;
+    cursor: pointer;
 }
+
 /* Date picker container styles */
 .date-picker {
     position: relative;
 }
 
 .date-picker input[type="date"] {
-    width: 100%;
-    color: rgb(0, 0, 0);
+    width: 100%; /* Asegura que el campo de fecha tenga el mismo ancho que el resto */
+    padding: 10px;
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: var(--font-family);
 }
 
 .date-picker .icon {
@@ -86,4 +108,20 @@ input[type="checkbox"] {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+}
+html,body {
+    background-image: url('https://wallpapers.com/images/hd/blue-anime-3c6imk1nx0ybypmn.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: var(--font-family);
+}
+.a {
+    text-align: right;
+}
+label{
+    color: var(--color-txt-light);
+}
+input,textarea,select{
+    color: var(--color-txt-dark) !important;
 }
