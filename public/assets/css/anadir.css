@@ -34,7 +34,7 @@ th {
 }
 
 /* Form elements styles */
-input[type="text"],
+.input-txt,
 input[type="date"],
 textarea {
     width: 100%;
@@ -58,7 +58,7 @@ input[type="checkbox"] {
 }
 
 /* Submit button styles */
-button[type="submit"] {
+.buttonS {
     background-color:var(--color-rosaClaro);
     color: white;
     padding: 10px 20px;

@@ -79,7 +79,7 @@
         <div class="row mt-5">
             <div class="col col-lg-2 ml-2 ">
                 <div class="card img float-right" style="width: 10rem;">
-                    <img src="{{ $manga->portada }}" class="" alt="...">
+                    <img src="{{ $manga->portada }}" class="c" alt="...">
                 </div>
 
             </div>
@@ -160,11 +160,7 @@
                     });
                 </script>
                 <p class="result"><span id="rating"></span></p>
-                <form action="{{ route('añadirALista') }}" method="POST" id="formAñadirALista">
-                    @csrf
-                    <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
-                    <button type="submit" class="btn btn-primary">Agregar a mi lista</button>
-                </form>
+                <a href="#" class="btn btn-primary">Agregar a mi lista</a>
 
             </div>
         </div>

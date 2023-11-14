@@ -40,19 +40,19 @@ class DBController extends Controller
     public function guardarComentario(Request $request){
         if (Auth::check()) {
             $idUsuario = Auth::id();
-            
+
             // Verificar si el comentario está presente
             $comentarioTexto = $request->input('comentario');
             if (empty($comentarioTexto)) {
                 return back()->withErrors(['error' => 'El comentario no puede estar vacío.']);
             }
-    
+
             $comentario = new Comentario;
             $comentario->id_usuario = $idUsuario;
             $comentario->id_manga = $request->input('id_manga');
             $comentario->comentario = $comentarioTexto;
             $comentario->save();
-    
+
             return back()->with('success', 'Comentario guardado exitosamente.');
         } else {
             return redirect()->route('login');
@@ -65,7 +65,7 @@ class DBController extends Controller
             $calificacionExistente = Calificacion::where('id_usuario', $idUsuario)
                 ->where('id_manga', $idManga)
                 ->first();
-    
+
             if ($calificacionExistente) {
                 // Si ya existe una calificación del usuario para este manga, actualiza la calificación
                 $calificacionExistente->calificacion = $request->input('calificacion');
@@ -78,7 +78,7 @@ class DBController extends Controller
                 $calificacion->calificacion = $request->input('calificacion');
                 $calificacion->save();
             }
-    
+
             return back();
         } else {
             return redirect()->route('login');
@@ -94,10 +94,12 @@ class DBController extends Controller
                 return back()->with('error', 'El manga ya está en tu lista.');
             }
 
+
             // Si no está en la lista, guárdalo
             $guardado = new Guardado;
             $guardado->id_usuario = $idUsuario;
             $guardado->id_manga = $idManga;
+            $guardado->fecha_guardado = date("Y-m-d");
             $guardado->save();
 
             return back()->with('success', 'Manga agregado a tu lista.');
