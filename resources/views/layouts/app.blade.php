@@ -91,7 +91,7 @@ foreach ($generos as $gg) {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        @for ($i = 0; $i < 7; $i++)
+                        @for ($i = 0; $i < 5; $i++)
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="{{ route('genero', ['genero' => $i + 1]) }}"><?php echo $listNames[$i]; ?>
