@@ -2,6 +2,15 @@
 
 @inject('dbController', 'App\Http\Controllers\DBController')
 @inject('mangaController', 'App\Http\Controllers\MangaController')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 @php
     $id = $_GET['manga'];
     $mangas = $mangaController->obtenerMangas();
