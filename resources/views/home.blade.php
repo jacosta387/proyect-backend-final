@@ -10,17 +10,6 @@
         <div class="titulo">
             <h2>Favoritos del mes</h2>
         </div>
-
-        <div class="container mt-5">
-            <h2>Barra de Búsqueda</h2>
-            <form action="search.php" method="GET">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Buscar..." name="query">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="submit">Buscar</button>
-                    </div>
-                </div>
-            </form>
     
             <!-- Mostrar resultados aquí -->
             <div id="resultados"></div>

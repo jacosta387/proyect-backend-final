@@ -8,6 +8,7 @@
     --color-txt-light: #f0f8ff;
     --color-txt-dark:#1a000c;
     --font-size: 16px;
+    --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
     --font-family:'Abandon';
 }
 
@@ -52,6 +53,26 @@ a, .nombreApp{
 }
 .small{
     margin-top: 10px;
+}
+
+.ctn-search div{
+    
+    
+    background-color: var(--bs-border-color-translucent);
+    opacity: 80%;
+    height: 40px;
+   color: #d24d6c;
+}
+
+.ctn-search button{
+    
+    height: 40px;
+
+}
+
+.material-icons{
+    color: white;
+    cursor: pointer;
 }
 
 footer{
