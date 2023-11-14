@@ -12,10 +12,10 @@ class CreateGuardadosTable extends Migration
             $table->increments('id_guardado');
             $table->integer('id_usuario')->unsigned();
             $table->integer('id_manga')->unsigned();
-            $table->date('fecha_guardado');
+            // $table->date('fecha_guardado');
             $table->timestamps();
 
-            $table->foreign('id_manga')->references('id_manga')->on('mangas');
+            // $table->foreign('id_manga')->references('id_manga')->on('mangas');
         });
     }
 
