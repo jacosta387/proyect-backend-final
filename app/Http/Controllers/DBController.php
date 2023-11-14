@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Genero;
 use App\Models\Calificacion;
 use App\Models\Comentario;
+use App\Models\Guardado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,6 +28,9 @@ class DBController extends Controller
     }
     public function obtenerComentarios(){
         return Comentario::all();
+    }
+    public function obtenerGuardados(){
+        return Guardado::all();
     }
 
     public function guardarComentario(Request $request){

@@ -1,6 +1,36 @@
 <link rel="stylesheet" href="assets/css/biblioteca.css">
 @extends('layouts.app')
+@inject('mangaController', 'App\Http\Controllers\MangaController')
 
+@inject('dbController', 'App\Http\Controllers\DBController')
+
+@php
+    $guardados = $dbController->obtenerguardados();
+    $mangas = $mangaController->obtenerMangas();
+    $mangasusuarios=array();
+
+    $guardadosUser=array();
+    foreach ($guardados as $g) {
+        if ($g->id_usuario=Auth::id()) {
+            $guardadosUser[]=$g;
+        }
+    }
+
+    $arrayId = array();
+    foreach ($guardadosUser as $gU ) {
+        #TODO recorrer  y añadir solo los id_manga
+    }
+
+
+    $arrayMangas = array();
+
+    foreach ($mangas as $m ) {
+        $idManga=$m->id_manga
+        if () {
+            #TODO Si idManga esta en el arrayId entonces que se agregue al arrayMangas
+        }
+    }
+@endphp
 @section('content')
     <div class="titulo">
         <h2>Leidos Recientemente</h2>
@@ -48,5 +78,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection
