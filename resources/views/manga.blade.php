@@ -130,9 +130,11 @@
             </div>
             <div class="col">
                 <h3>Comments:</h3>
-                <form>
+                <form action="{{ route('guardarComentario') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id_manga" value="{{ $id }}">
                     <div class="form-group comment">
-                        <textarea class="form-control" rows="4"></textarea>
+                        <textarea class="form-control" name="comentario" rows="4"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar comentario</button>
                 </form>
