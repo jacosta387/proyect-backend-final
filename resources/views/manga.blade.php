@@ -28,7 +28,7 @@
             $manga = $m;
         }
     }
-
+    $promedioCalificacion =0;
     // Obtener las calificaciones del manga
     $calificacionesManga = [];
     foreach ($calificaciones as $c) {
@@ -36,8 +36,6 @@
             $calificacionesManga[] = $c;
         }
     }
-    
-    
 
 
     #Variable para almacenar el promedio
@@ -51,10 +49,6 @@
     if (count($calificacionesManga)!=0) {
         $promedioCalificacion = $sumaCalificaciones / count($calificacionesManga);
     }
-
-     
-
-
 
     // Obtener los comentarios del manga
     $comentariosManga = [];
