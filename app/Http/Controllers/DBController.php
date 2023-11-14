@@ -8,6 +8,7 @@ use App\Models\Calificacion;
 use App\Models\Comentario;
 use App\Models\Guardado;
 use App\Models\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Registro_lectura;
@@ -36,6 +37,9 @@ class DBController extends Controller
     }
     public function obtenerGuardados(){
         return Guardado::all();
+    }
+    public function obtenerRegistro(){
+        return Registro_lectura::all();
     }
 
     public function guardarComentario(Request $request){

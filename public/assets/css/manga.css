@@ -41,7 +41,7 @@ body{
     margin-bottom: 30px;
     color: var(--color-txt-light) !important;
 }
-#inputIdCapitulo{
+#id_capitulo{
     width: 6rem;
     vertical-align: middle;
     margin-inline-start: 2rem;

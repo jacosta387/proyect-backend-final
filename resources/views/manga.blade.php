@@ -20,8 +20,19 @@
     $comentarios = $dbController->obtenerComentarios();
     $usuarios = $dbController->obtenerUsuarios();
     $generos = $dbController->obtenerGeneros();
-    $capitulo = 9;
+    $registros = $dbController->obtenerRegistro();
 
+
+
+    foreach ($registros as $registro) {
+        if ($registro->id_usuario==Auth::id() && $registro->id_manga==$id ) {
+            $capitulo=$registro->id_capitulo;
+        }else{
+            $capitulo=0;
+        }
+
+    }
+    
 
 
     #El manga de esta pestaña se llamará $manga
@@ -225,8 +236,8 @@
                         @csrf
                         <label for="id_capitulo">Capitulo:</label>
                         <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
-                        <input type="number" value="{{ $capitulo }}" name="id_capitulo" id="inputIdCapitulo"
-                            value="">
+                        <input type="number" value="{{ $capitulo }}" name="id_capitulo" id="id_capitulo"
+                            >
                         <button type="submit" class="btn btn-primary" class="mt-6">Guardar</button>
                     </form>
                 </div>
