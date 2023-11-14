@@ -76,6 +76,16 @@
                         <td>
                             <input type="url" name="link" id="link" class="input-txt" required>
                         </td>
+                        
+                    </tr>    
+                    <tr>
+                        <td class="a">
+                            <label for="link">Numero de Capitulo</label>
+                        </td>
+                        <td>
+                            <input class="input-txt" type="number" name="capitulos" id="capitulo" required>
+                        </td>
+                        
                     </tr>                    
                 </table>
                 <button class="buttonS" type="submit">Guardar</button>
