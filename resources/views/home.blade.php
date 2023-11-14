@@ -83,7 +83,7 @@
         </div>
 
 
-        <div class="interesar    mt-3">
+        <div class="interesar   mt-3">
             <div class="titulo">
                 <h2>Te puede interesar</h2>
             </div>
@@ -114,29 +114,32 @@
                 ?>
             </div>
         </div>
-        <div class="titulo">
-            <h2>Mas Mangas</h2>
-        </div>
-        <div class="press-container">
-            @foreach ($mangas as $manga)
-                {{-- <div>
+
+        <div class="mas mt-3">
+            <div class="titulo">
+                <h2>Mas Mangas</h2>
+            </div>
+            <div class="press-container">
+                @foreach ($mangas as $manga)
+                    {{-- <div>
                         <h2>{{ $manga->titulo }}</h2>
                         <p> <img src={{ $manga->portada }} class="card-img-top" alt="...">';{{ $manga->descripcion }}</p>
 
                         <!-- Agrega más campos según sea necesario -->
                     </div> --}}
 
-                <div class="press">
-                    <div class="card" style="width: 18rem;">
-                        <a href="{{ route('manga', ['manga' => $manga->id_manga]) }}">
-                            <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text">{{ $manga->titulo }}</p>
+                    <div class="press">
+                        <div class="card" style="width: 18rem;">
+                            <a href="{{ route('manga', ['manga' => $manga->id_manga]) }}">
+                                <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <p class="card-text">{{ $manga->titulo }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
-@endsection
+    @endsection

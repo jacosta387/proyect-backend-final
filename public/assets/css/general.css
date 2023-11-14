@@ -9,12 +9,27 @@
     --font-size: 16px;
     --font-family:'Abandon';
 }
+
+/* variables de colores tamaños y fuentes */
+.mi-linea {
+    height: 3px;  /* Ajusta el grosor aquí */
+    background-color: rgb(243, 139, 139);  /* Cambia el color si es necesario */
+    border: none;
+    margin: 1px;
+    margin-inline-start: 10px;
+    margin-inline-end: 20px;
+}
+.titulo {
+    color: var(--color-txt-light) !important;
+    margin-inline:2rem !important;
+  }
+
 .press-container {
     display: flex;
     flex-wrap: wrap;
     padding-top: 1rem;
-    
-
+    margin-top: 10px;
+    margin-left: 2rem;
   }
 
   .press {

@@ -79,7 +79,7 @@
         <div class="row mt-5">
             <div class="col col-lg-2 ml-2 ">
                 <div class="card img float-right" style="width: 10rem;">
-                    <img src="{{ $manga->portada }}" class="card-img-top " alt="...">
+                    <img src="{{ $manga->portada }}" class="" alt="...">
                 </div>
 
             </div>
@@ -127,34 +127,34 @@
                     </div>
                     <button type="button" id="submit-rating" class="btn btn-primary">Calificar</button>
                 </div>
-                
+
                 <form action="{{ route('guardarCalificacion') }}" method="POST" id="calificacion-form">
                     @csrf
                     <input type="hidden" name="id_manga" value="{{ $id }}">
                     <input type="hidden" name="calificacion" id="calificacion-input" value="1"> <!-- Valor predeterminado -->
                 </form>
-                
+
                 <script>
                     // JavaScript para manejar la calificación
                     const ratingContainer = document.getElementById('star-rating');
                     const calificacionInput = document.getElementById('calificacion-input');
-                
+
                     ratingContainer.addEventListener('click', (event) => {
                         if (event.target.classList.contains('star')) {
                             const selectedRating = event.target.getAttribute('data-rating');
                             calificacionInput.value = selectedRating;
-                
+
                             // Puedes agregar lógica adicional para resaltar las estrellas seleccionadas visualmente si es necesario
                             // ...
-                
+
                             console.log('Calificación seleccionada:', selectedRating);
                         }
                     });
-                
+
                     // JavaScript para enviar el formulario al hacer clic en el botón
                     const submitButton = document.getElementById('submit-rating');
                     const calificacionForm = document.getElementById('calificacion-form');
-                
+
                     submitButton.addEventListener('click', () => {
                         calificacionForm.submit();
                     });
@@ -193,6 +193,7 @@
             <div class="col-lg-1"></div>
             <div class="col">
                 <h3>Comentarios</h3>
+
                 <form action="{{ route('guardarComentario') }}" method="POST">
                     @csrf
                     <input type="hidden" name="id_manga" value="{{ $id }}">
@@ -201,6 +202,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar comentario</button>
                 </form>
+                <hr class="mi-linea">
                 <!-- Comentarios -->
                 <div class="comment-section">
                     <!-- Comentarios -->

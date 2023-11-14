@@ -1,0 +1,71 @@
+:root {
+    --color-background-elements:#210210;
+    --color-background:#2b0215;
+    --color-rosaClaro: #d24d6c;
+    --color-fuccia:#EE2853;
+    --color-fucsia:#EE2853;
+    --color-txt-light: #f0f8ff;
+    --color-txt-dark:#1a000c;
+    --font-size: 16px;
+    --font-family:'Abandon';
+}
+
+.content{
+    height: 100%;
+}
+.c{
+    position: absolute;
+    top: 50%;
+    left: 0;
+  transform: translateY(-50%);
+  width: 100%
+}
+.card{
+
+    background-color: rgba(0,0,0,0.7) !important;
+    }
+
+.input-group-prepend span{
+    width: 50px;
+    background-color: var(--color-fuccia2);
+    color: black;
+    border:0 !important;
+}
+input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+
+    }
+
+
+
+.card-header h1 {
+    color: white;
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.remember{
+    color:  white;
+
+}
+
+.login_btn{
+    color: black;
+    background-color: var(--color-fuccia2) !important;
+    border-color: var(--color-background) !important;
+    width: 100px;
+}
+
+.card-footer{
+    margin-top: 7% !important;
+    background-color: rgba(0,0,0,0.55) !important;
+}
+.links a{
+    color: var(--color-fuccia2);
+    }
+

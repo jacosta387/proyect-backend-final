@@ -1,10 +1,4 @@
-/* variables de colores tamaños y fuentes */
-.mi-linea {
-    height: 3px;  /* Ajusta el grosor aquí */
-    background-color: rgb(243, 139, 139);  /* Cambia el color si es necesario */
-    border: none;
-    margin-bottom: 1px;
-}
+
 .titulo {
   margin: 0.5rem;
   color: var(--color-txt-light);

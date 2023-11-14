@@ -21,8 +21,9 @@
 
 @endphp
 @section('content')
-    <div class="titulo">
-        <h2>Resultados para: "{{ $busqueda }}"</h2>
+    <div class="titulo ml-2">
+        <h2 class="ml-2">Resultados para: "{{ $busqueda }}"</h2>
+        <hr class="mi-linea">
     </div>
     <div class="press-container">
         @foreach ($arrayMangas as $manga)
@@ -37,5 +38,9 @@
                 </div>
             </div>
         @endforeach
+
+        @if (count($arrayMangas)==0)
+            <h3>No se encontraron resultados</h3>
+        @endif
     </div>
 @endsection

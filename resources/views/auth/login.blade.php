@@ -1,4 +1,7 @@
+
 <link rel="stylesheet" href="assets/css/login.css">
+<link rel="stylesheet" href="assets/css/auth.css">
+
 
 @extends('layouts.app')
 
