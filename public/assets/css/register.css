@@ -16,5 +16,6 @@ html,body {
     background-repeat: no-repeat;
     height: fit-content;
     font-family: var(--font-family);
+    overflow-x: hidden;
 }
 

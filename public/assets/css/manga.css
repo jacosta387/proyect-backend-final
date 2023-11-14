@@ -32,6 +32,9 @@
     border-radius: 15px;
     background-color: rgba(32, 2,16, 0.7) !important;
 }
+body{
+    overflow-x: hidden;
+}
 .content {
 
     height: max-content;

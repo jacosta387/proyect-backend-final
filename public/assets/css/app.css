@@ -1,31 +1,32 @@
 /* variables de colores tamaños y fuentes */
 :root {
-    --color-background-elements:#210210;
-    --color-background:#2b0215;
+    --color-background-elements: #210210;
+    --color-background: #2b0215;
     --color-rosaClaro: #d24d6c;
-    --color-fuccia:#EE2853;
-    --color-fucsia:#EE2853;
+    --color-fuccia: #ee2853;
+    --color-fucsia: #ee2853;
     --color-txt-light: #f0f8ff;
-    --color-txt-dark:#1a000c;
+    --color-txt-dark: #1a000c;
     --font-size: 16px;
     --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
-    --font-family:'Abandon';
+    --font-family: "Abandon";
 }
-
 
 body {
     color: var(--color-txt-light) !important;
     font-family: var(--font-family);
     display: flex;
     flex-direction: column;
-    background-color:var(--color-background);
-
+    background-color: var(--color-background);
+    overflow-x: hidden; 
 }
-#app{
+#app {
     flex: 1;
 }
+
 .navbar {
     background-color: var(--color-background-elements) !important;
+    margin-bottom: 40px;
 }
 .navbar-brand {
     color: var(--color-txt-light) !important;
@@ -34,7 +35,7 @@ body {
     margin-right: 15px;
 }
 .nav-link {
-    color:var(--color-rosaClaro) !important;
+    color: var(--color-rosaClaro) !important;
 }
 .container {
     margin-left: 0 !important;
@@ -42,35 +43,34 @@ body {
 .logo {
     margin-left: 35px;
 }
-.bd-footer{
+.bd-footer {
+    margin-top: 4rem;
     background-color: var(--color-background-elements) !important;
 }
-li,h5{
+li,
+h5 {
     color: var(--color-txt-light) !important;
 }
-a, .nombreApp{
+a,
+.nombreApp {
     color: var(--color-fucsia);
 }
-.small{
+.small {
     margin-top: 10px;
 }
 
 .ctn-search {
-
-
     background-color: var(--bs-border-color-translucent);
     opacity: 80%;
     height: 30px;
-   color: #d24d6c;
+    color: #d24d6c;
 }
 
-
-.material-icons{
+.material-icons {
     color: white;
     cursor: pointer;
 }
 
-footer{
-    padding-top: 0 !important;
-    margin-top: 0 !important;
+.text-center {
+    text-align: center;
 }

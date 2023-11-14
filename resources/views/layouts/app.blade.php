@@ -65,12 +65,17 @@ foreach ($generos as $gg) {
 
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="icon" href="assets/img/logo.png">
 </head>
 
 <body>
+
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <img src="assets/img/logo.png" alt="Logo" srcset="" class="logo float-right">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm margin-bot">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img src="assets/img/logo.png" alt="Logo" srcset="" class="logo float-right">
+
+            </a>
             <div class="container">
 
 
@@ -86,7 +91,7 @@ foreach ($generos as $gg) {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        @for ($i = 0; $i < 5; $i++)
+                        @for ($i = 0; $i < 7; $i++)
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="{{ route('genero', ['genero' => $i + 1]) }}"><?php echo $listNames[$i]; ?>
@@ -94,7 +99,7 @@ foreach ($generos as $gg) {
                             </li>
                         @endfor
 
-                        @if (count($listNames) > 5)
+                        @if (count($listNames) > 20)
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdownMas" class="nav-link dropdown-toggle" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -115,6 +120,24 @@ foreach ($generos as $gg) {
 
 
                         <li class="nav-item">
+                            {{-- <div class="ctn-search">
+                                <form action="{{ route('busqueda') }}" method="GET">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Buscar..."
+                                            name="query">
+                                        <div id=bt-search class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="submit"><i
+                                                    class="material-icons">search</i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> --}}
+                        </li>
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
                             <div class="ctn-search">
                                 <form action="{{ route('busqueda') }}" method="GET">
                                     <div class="input-group mb-3">
@@ -128,10 +151,7 @@ foreach ($generos as $gg) {
                                 </form>
                             </div>
                         </li>
-                    </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -176,83 +196,83 @@ foreach ($generos as $gg) {
         <main class="">
             @yield('content')
         </main>
-        
+
         <footer class="bd-footer ">
-            <div class="container c-footer py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+
+
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-5" style="align-text: center">
+                        <br><br>
+                        <ul style="list-style: none">
+                            <li><img src="assets/img/logo.png" width="80" style="text-align: center "></li>
+                            <li><span class="nombreApp ml-2" style="font-size: 60px">MangaDexy</span>
+                        </ul>
+                        </li>
+                    </div>
+                    <div class="col">
+                    </div>
+                    <div class="col-4">
+                        <br>
+                        <ul style="list-style: none" >
+                            <br>
+
+                            <li>Robinson Leon Moreno</li>
+                            <li>Emilton Hernandez Mejía</li>
+                            <li>Anghel Guiterrez</li>
+                            <li>José Acosta</li>
+                            <br>
+                            <li><a style="font-size: 25px"href="https://github.com/jacosta387/proyect-backend-final.git">Repositorio</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+
+
+
+
+    {{-- <div class="container c-footer py-4 py-md-5 px-4 px-md-3 text-body-secondary">
                 <div class="row">
                     <div class="col-lg-3 mb-3">
                         <img src="assets/img/logo.png" width="40" alt="">
-                        <span class="fs-5 nombreApp">MangaDex3</span>
+                        <span class="fs-5 nombreApp">MangaDexy</span>
                         <ul class="list-unstyled small">
-                            <li class="mb-2">Designed and built with all the love in the world by the <a
-                                    href="/docs/5.3/about/team/">Bootstrap team</a> with the help of <a
-                                    href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.
+                            <li class="mb-2">Universidad Autonoma de Bucarmanga
+                                <a href="https://github.com/jacosta387/proyect-backend-final.git">Repositorio</a>.
                             </li>
-                            <li class="mb-2">Code licensed <a
-                                    href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank"
-                                    rel="license noopener">MIT</a>, docs <a
-                                    href="https://creativecommons.org/licenses/by/3.0/" target="_blank"
-                                    rel="license noopener">CC BY 3.0</a>.</li>
-                            <li class="mb-2">Currently v5.3.2.</li>
                         </ul>
-                    </div>
-                    <div class="col-6 col-lg-2 offset-lg-1 mb-3">
-                        <h5>Links</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="/">Home</a></li>
-                            <li class="mb-2"><a href="/docs/5.3/">Docs</a></li>
-                            <li class="mb-2"><a href="/docs/5.3/examples/">Examples</a></li>
-                            <li class="mb-2"><a href="https://icons.getbootstrap.com/">Icons</a></li>
-                            <li class="mb-2"><a href="https://themes.getbootstrap.com/">Themes</a></li>
-                            <li class="mb-2"><a href="https://blog.getbootstrap.com/">Blog</a></li>
-                            <li class="mb-2"><a href="https://cottonbureau.com/people/bootstrap" target="_blank"
-                                    rel="noopener">Swag Store</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-lg-2 mb-3">
-                        <h5>Guides</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="/docs/5.3/getting-started/">Getting started</a></li>
-                            <li class="mb-2"><a href="/docs/5.3/examples/starter-template/">Starter template</a>
+                    </div> --}}
+
+    {{-- <div class="col-6 col-lg-6 offset-lg-1 mb-3 text-center">
+                        <ul class="list-inline">
+                            <!-- Usar list-inline para que los elementos de la lista estén en línea -->
+                            <li class="mb-2 list-inline-item"><a
+                                    href="http://localhost/proyect-backend-final/public/genero?genero=1">Shonen</a>
                             </li>
-                            <li class="mb-2"><a href="/docs/5.3/getting-started/webpack/">Webpack</a></li>
-                            <li class="mb-2"><a href="/docs/5.3/getting-started/parcel/">Parcel</a></li>
-                            <li class="mb-2"><a href="/docs/5.3/getting-started/vite/">Vite</a></li>
+                            <li class="mb-2 list-inline-item"><a
+                                    href="http://localhost/proyect-backend-final/public/genero?genero=2">Isekai</a>
+                            </li>
+                            <li class="mb-2 list-inline-item"><a
+                                    href="http://localhost/proyect-backend-final/public/genero?genero=3">Seinei</a>
+                            </li>
+                            <li class="mb-2 list-inline-item"><a
+                                    href="http://localhost/proyect-backend-final/public/genero?genero=4">Harem</a>
+                                </li>
+                            <li class="mb-2 list-inline-item"><a
+                                    href="http://localhost/proyect-backend-final/public/genero?genero=5">CyberPunk</a>
+                            </li>
+                            <li class="mb-2 list-inline-item"><a
+                                    href="http://localhost/proyect-backend-final/public/genero?genero=6">Kodomo</a>
+                            </li>
                         </ul>
-                    </div>
-                    <div class="col-6 col-lg-2 mb-3">
-                        <h5>Projects</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap" target="_blank"
-                                    rel="noopener">Bootstrap 5</a></li>
-                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap/tree/v4-dev"
-                                    target="_blank" rel="noopener">Bootstrap 4</a></li>
-                            <li class="mb-2"><a href="https://github.com/twbs/icons" target="_blank"
-                                    rel="noopener">Icons</a></li>
-                            <li class="mb-2"><a href="https://github.com/twbs/rfs" target="_blank"
-                                    rel="noopener">RFS</a></li>
-                            <li class="mb-2"><a href="https://github.com/twbs/examples/" target="_blank"
-                                    rel="noopener">Examples repo</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-lg-2 mb-3">
-                        <h5>Community</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap/issues" target="_blank"
-                                    rel="noopener">Issues</a></li>
-                            <li class="mb-2"><a href="https://github.com/twbs/bootstrap/discussions"
-                                    target="_blank" rel="noopener">Discussions</a></li>
-                            <li class="mb-2"><a href="https://github.com/sponsors/twbs" target="_blank"
-                                    rel="noopener">Corporate sponsors</a></li>
-                            <li class="mb-2"><a href="https://opencollective.com/bootstrap" target="_blank"
-                                    rel="noopener">Open Collective</a></li>
-                            <li class="mb-2"><a href="https://stackoverflow.com/questions/tagged/bootstrap-5"
-                                    target="_blank" rel="noopener">Stack Overflow</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
+                    </div> --}}
+
+
+    </div>
+    </div>
+    </footer>
 
     </div>
 
