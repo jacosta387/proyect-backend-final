@@ -6,18 +6,6 @@
 @section('content')
     <link rel="stylesheet" href="assets/css/home.css">
     <div class="content">
-        <div class="container mt-5">
-            <h2>Barra de Búsqueda</h2>
-            <form action="{{ route('busqueda') }}" method="GET">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Buscar..." name="query">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="submit">Buscar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
         <div class="titulo">
             <h2>Favoritos del mes</h2>
         </div>
