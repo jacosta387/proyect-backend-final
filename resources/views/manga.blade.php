@@ -28,7 +28,7 @@
             $manga = $m;
         }
     }
-
+    $promedioCalificacion =0;
     // Obtener las calificaciones del manga
     $calificacionesManga = [];
     foreach ($calificaciones as $c) {
@@ -36,38 +36,19 @@
             $calificacionesManga[] = $c;
         }
     }
-    
-    function calcularPromediomg($calificacionesManga) {
-    
-    if (!empty($calificacionesManga)) {
-       
-        $suma = array_sum($calificacionesManga);
-        
-        
-        $numCalificaciones = count($calificacionesManga);
-        
-        
-        $promedio = $suma / $numCalificaciones;
-        
-        
-        return $promedio;
-    } else {
-        
-        return "No hay calificaciones para promediar";
-    }
-}
-    $resultado = calcularPromedio($calificaciones);
-
 
 
     #Variable para almacenar el promedio
-    $promedioCalificacion = $promedio;
+    $promedioCalificacion = 0;
+    $sumaCalificaciones = 0;
 
-
-
-
-
-
+    # Bucle foreach para sumar las calificaciones
+    foreach ($calificacionesManga as $calificacion) {
+        $sumaCalificaciones += $calificacion ->calificacion;
+    }
+    if (count($calificacionesManga)!=0) {
+        $promedioCalificacion = $sumaCalificaciones / count($calificacionesManga);
+    }
 
     // Obtener los comentarios del manga
     $comentariosManga = [];
@@ -118,12 +99,13 @@
 
 
                             </div>
-                            <div class="nav-item col-lg-4 col   cajita">
-                                Caps
-                                <br>
-                                {{ $manga->capitulos }}
-
-
+                            <div class="col-sm border-right cajoncito">
+                                <div class="row">
+                                    <h5>Capitulos:</h5>
+                                </div>
+                                <div class="row">
+                                    <p>{{ $promedioCalificacion }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -136,7 +118,7 @@
             </div>
             <div class="col mt-5">
                 <div class="rating-container">
-                    <div class="rating" id="star-rating">
+                    <div class="rating ">
                         <span class="star" data-rating="1">&#9733;</span>
                         <span class="star" data-rating="2">&#9733;</span>
                         <span class="star" data-rating="3">&#9733;</span>
@@ -145,45 +127,40 @@
                     </div>
                     <button type="button" id="submit-rating" class="btn btn-primary">Calificar</button>
                 </div>
-
+                
                 <form action="{{ route('guardarCalificacion') }}" method="POST" id="calificacion-form">
                     @csrf
                     <input type="hidden" name="id_manga" value="{{ $id }}">
-                    <input type="hidden" name="calificacion" id="calificacion-input" value="1">
-                    <!-- Valor predeterminado -->
+                    <input type="hidden" name="calificacion" id="calificacion-input" value="1"> <!-- Valor predeterminado -->
                 </form>
-
+                
                 <script>
                     // JavaScript para manejar la calificación
                     const ratingContainer = document.getElementById('star-rating');
                     const calificacionInput = document.getElementById('calificacion-input');
-
+                
                     ratingContainer.addEventListener('click', (event) => {
                         if (event.target.classList.contains('star')) {
                             const selectedRating = event.target.getAttribute('data-rating');
                             calificacionInput.value = selectedRating;
-
+                
                             // Puedes agregar lógica adicional para resaltar las estrellas seleccionadas visualmente si es necesario
                             // ...
-
+                
                             console.log('Calificación seleccionada:', selectedRating);
                         }
                     });
-
+                
                     // JavaScript para enviar el formulario al hacer clic en el botón
                     const submitButton = document.getElementById('submit-rating');
                     const calificacionForm = document.getElementById('calificacion-form');
-
+                
                     submitButton.addEventListener('click', () => {
                         calificacionForm.submit();
                     });
                 </script>
                 <p class="result"><span id="rating"></span></p>
-                <form action="{{ route('añadirALista') }}" method="POST" id="formAñadirALista">
-                    @csrf
-                    <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
-                    <button type="submit" class="btn btn-primary">Agregar a mi lista</button>
-                </form>
+                <a href="#" class="btn btn-primary">Agregar a mi lista</a>
 
             </div>
         </div>

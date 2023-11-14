@@ -3,16 +3,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="content">
-        <div class="row justify-content-center c">
+    <div class="content mt-5">
+        <div class="row justify-content-center mt-5 c">
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-header">
                         <h1>{{ __('Login') }}</h1>
-                        <div class="d-flex justify-content-end social_icon">
-                            <span><i class="fab fa-facebook-square"></i></span>
-                            <span><i class="fab fa-twitter-square"></i></span>
-                        </div>
+
                     </div>
 
                     <div class="card-body">
@@ -23,7 +20,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                                     </div>
-                                    <input id="email" placeholder="{{ __('email') }}" type="email"
+                                    <input id="email" placeholder="{{ __('Email') }}" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email" autofocus>
 
@@ -38,9 +35,9 @@
                             <div class="row mb-3">
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
-                                    <input id="password" placeholder="{{ __('password') }}" type="password"
+                                    <input id="password" placeholder="{{ __('Contraseña') }}" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="current-password">
 
