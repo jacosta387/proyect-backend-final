@@ -1,6 +1,7 @@
 /* variables de colores tamaños y fuentes */
 :root {
     --color-background-elements: #210210;
+    --color-background-intermedy: #21021050;
     --color-background: #2b0215;
     --color-rosaClaro: #d24d6c;
     --color-fucsia: #EE2853;
@@ -10,14 +11,53 @@
     --font-size: 16px;
     --font-family: 'Abandon';
 }
+.bkg-tpt{
+    padding-top: 3rem;
+    background-color: rgba(32, 2, 16, 0.7);
+    padding-bottom: 2rem;
+}
+.head{
+    /* background-color: var(--color-background-intermedy); */
 
-
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Establece la transparencia */
+    /* El último valor (0.7) representa la opacidad (0 = transparente, 1 = opaco) */
+}
+.desc{
+    padding-top: 1rem;padding-bottom: 1rem;
+    color: var(--color-txt-light) !important;
+    border: 0;
+    border-radius: 15px;
+    background-color: rgba(32, 2,16, 0.7) !important;
+}
 .content {
-    margin-top: 10px;
+
     height: max-content;
     margin-bottom: 30px;
     color: var(--color-txt-light) !important;
 }
+#inputIdCapitulo{
+    width: 6rem;
+    vertical-align: middle;
+    margin-inline-start: 2rem;
+    margin-inline-end: 1rem;
+}
+.progress-bar, progress{
+    padding-left: 0 !important;
+    color: var(--color-fucsia);
+}
+.r1{
+    padding-left: 0% !important;
+}
+.f1{
+    justify-content: center;
+    align-items:center;
+    vertical-align: middle;
+    align-content: center;
+}
+
 
 .titulo,
 .descripcion {
@@ -111,23 +151,21 @@ h5 {
 .tabla-contenido {
     margin-top: 5%;
     margin-left: 2%;
-    width: fit-content;
+
     border: 0;
     border-radius: 15px;
 }
 
-.bkgTable,
-td,
-th {
-    background-color: var(--color-rosaClaro) !important;
-    color: var(--color-txt-dark) !important;
+.bkgTable {
+    height: max-content;
+    padding: 2rem;
+    background-color: var(--color-background-intermedy) !important;
+    color: var(--color-txt-light) !important;
     border: 0;
     border-radius: 15px;
 }
 
-thead.td {
-    background-color: #1a000c;
-}
+
 
 th {
     border-top: none !important;

@@ -20,6 +20,9 @@
     $comentarios = $dbController->obtenerComentarios();
     $usuarios = $dbController->obtenerUsuarios();
     $generos = $dbController->obtenerGeneros();
+    $capitulo = 9;
+
+
 
     #El manga de esta pestaña se llamará $manga
     // Obtener el manga por ID
@@ -28,6 +31,7 @@
             $manga = $m;
         }
     }
+    $porcentaje=round(($capitulo/$manga->capitulos)*100,1);
     $promedioCalificacion = 0;
     // Obtener las calificaciones del manga
     $calificacionesManga = [];
@@ -75,189 +79,171 @@
 </script>
 @section('content')
     <div class="content ">
-        <div class="row mt-5">
-            <div class="col col-lg-2 ml-2 ">
-                <div class="card img float-right" style="width: 10rem;">
-                    <img src="{{ $manga->portada }}" class="c" alt="...">
-                </div>
 
-            </div>
-            <div class="col desc col-lg-6 ml-2">
-
-                <div class="titulo row ">
-                    <div class="col-lg-6 mr-4">
-                        <h1>{{ $manga->titulo }}</h1>
-                        <p class="tags">{{ $nombresGeneros[$manga->id_genero] }}</p>
+        <div class="row head" style="background-image: url({{$manga->portada}});">
+            <div class="row bkg-tpt">
+                <div class="col col-lg-2 ml-2 ">
+                    <div class="card img float-right" style="width: 10rem;">
+                        <img src="{{ $manga->portada }}" class="c" alt="...">
                     </div>
-                    <div class="container-sm col cajon align-items-center caja">
 
-                        <div class="ml-5 nav flex-row row">
-                            <div class="nav-item col-lg-4 col  border-right mr-0 cajita">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                    class="bi bi-star-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                </svg>
-                                <br>
-                                {{ $promedioCalificacion }}
+                </div>
+                <div class="col desc col-lg-6 ml-2" >
+
+                    <div class="titulo-manga row ">
+                        <div class="col-lg-6 mr-4">
+                            <h1>{{ $manga->titulo }}</h1>
+                            <p class="tags">{{ $nombresGeneros[$manga->id_genero] }}</p>
+                        </div>
+                        <div class="container-sm col cajon align-items-center caja">
+
+                            <div class="ml-5 nav flex-row row">
+                                <div class="nav-item col-lg-4 col  border-right mr-0 cajita">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                        class="bi bi-star-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    </svg>
+                                    <br>
+                                    {{ $promedioCalificacion }}
+                                </div>
+                                <div class="nav-item col-lg-4 col  border-right mr-0 cajita">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                        class="bi bi-card-list" viewBox="0 0 16 16">
+                                        <path
+                                            d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+                                        <path
+                                            d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                                    </svg>
+                                    <br>
+                                    {{ $manga->capitulos }}
+                                </div>
+                                <div class="nav-item col-lg-4 col  mr-0 cajita">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                        class="bi bi-chat-heart-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15Zm0-9.007c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+                                    </svg>
+                                    <br>
+                                    {{ count($comentariosManga) }}
+                                </div>
                             </div>
-                            <div class="nav-item col-lg-4 col  border-right mr-0 cajita">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                    class="bi bi-card-list" viewBox="0 0 16 16">
-                                    <path
-                                        d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
-                                    <path
-                                        d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
-                                </svg>
-                                <br>
-                                {{ $manga->capitulos }}
-                            </div>
-                            <div class="nav-item col-lg-4 col  mr-0 cajita">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                    class="bi bi-chat-heart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15Zm0-9.007c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
-                                </svg>
-                                <br>
-                                {{ count($comentariosManga) }}
+                            <div class="row mt-3">
+                                <center><a class="ml-5" href={{ $manga->link }} target="_blank">Ir al manga</a></center>
                             </div>
                         </div>
-                        <div class="row mt-3">
-                            <center><a class="ml-5" href={{ $manga->link }} target="_blank">Ir al manga</a></center>
+
+
+                    </div>
+                    <div class="descripcion row ml-3">
+                        {{ $manga->descripcion }}
+                    </div>
+                </div>
+                <div class="col mt-5">
+                    <div class="rating-container">
+                        <div class="rating ">
+                            <span class="star" data-rating="1">&#9733;</span>
+                            <span class="star" data-rating="2">&#9733;</span>
+                            <span class="star" data-rating="3">&#9733;</span>
+                            <span class="star" data-rating="4">&#9733;</span>
+                            <span class="star" data-rating="5">&#9733;</span>
                         </div>
+                        @guest
+                            <button type="button" id="submit-rating" class="btn btn-primary"
+                                onclick="event.preventDefault();
+                            document.getElementById('login-form').submit();">Calificar</button>
+                        @else
+                            <button type="button" id="submit-rating" class="btn btn-primary"
+                                onclick="event.preventDefault();
+                            document.getElementById('calificacion-form').submit();">Calificar</button>
+                        @endguest
+
                     </div>
+                    <form action="{{ route('login') }}" method="get" id="login-form"></form>
 
 
-                </div>
-                <div class="descripcion row ml-3">
-                    {{ $manga->descripcion }}
+                    <form action="{{ route('guardarCalificacion') }}" method="POST" id="calificacion-form">
+                        @csrf
+                        <input type="hidden" name="id_manga" value="{{ $id }}">
+                        <input type="hidden" name="calificacion" id="calificacion-input" value="1">
+                        <!-- Valor predeterminado -->
+                    </form>
+                    <script>
+                        // JavaScript para manejar la calificación
+                        const ratingContainer = document.getElementById('star-rating');
+                        const calificacionInput = document.getElementById('calificacion-input');
+
+                        ratingContainer.addEventListener('click', (event) => {
+                            if (event.target.classList.contains('star')) {
+                                const selectedRating = event.target.getAttribute('data-rating');
+                                calificacionInput.value = selectedRating;
+
+                                // Puedes agregar lógica adicional para resaltar las estrellas seleccionadas visualmente si es necesario
+                                // ...
+
+                                console.log('Calificación seleccionada:', selectedRating);
+                            }
+                        });
+
+                        // JavaScript para enviar el formulario al hacer clic en el botón
+                        const submitButton = document.getElementById('submit-rating');
+                        const calificacionForm = document.getElementById('calificacion-form');
+
+                        submitButton.addEventListener('click', () => {
+                            calificacionForm.submit();
+                        });
+                    </script>
+                    <p class="result"><span id="rating"></span></p>
+                    <form action="{{ route('añadirALista') }}" method="POST" id="formAñadirALista">
+                        @csrf
+                        <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
+                        <button type="submit" class="btn btn-primary">Agregar a mi lista</button>
+                    </form>
+                    <script>
+                        $(document).ready(function() {
+                            $("#formAñadirALista").submit(function(event) {
+                                var maxChecked = Math.max.apply(null, $(".checkbox:checked").map(function() {
+                                    return parseInt($(this).data("value"));
+                                }).get());
+
+                                $("#inputIdCapitulo").val(maxChecked);
+
+                                return true;
+                            });
+                        });
+                    </script>
+
                 </div>
             </div>
-            <div class="col mt-5">
-                <div class="rating-container">
-                    <div class="rating ">
-                        <span class="star" data-rating="1">&#9733;</span>
-                        <span class="star" data-rating="2">&#9733;</span>
-                        <span class="star" data-rating="3">&#9733;</span>
-                        <span class="star" data-rating="4">&#9733;</span>
-                        <span class="star" data-rating="5">&#9733;</span>
-                    </div>
-                    @guest
-                        <button type="button" id="submit-rating" class="btn btn-primary"
-                            onclick="event.preventDefault();
-                    document.getElementById('login-form').submit();">Calificar</button>
-                    @else
-                        <button type="button" id="submit-rating" class="btn btn-primary"
-                            onclick="event.preventDefault();
-                    document.getElementById('calificacion-form').submit();">Calificar</button>
-                    @endguest
 
-                </div>
-                <form action="{{ route('login') }}" method="get" id="login-form"></form>
-
-
-                <form action="{{ route('guardarCalificacion') }}" method="POST" id="calificacion-form">
-                    @csrf
-                    <input type="hidden" name="id_manga" value="{{ $id }}">
-                    <input type="hidden" name="calificacion" id="calificacion-input" value="1">
-                    <!-- Valor predeterminado -->
-                </form>
-                <script>
-                    // JavaScript para manejar la calificación
-                    const ratingContainer = document.getElementById('star-rating');
-                    const calificacionInput = document.getElementById('calificacion-input');
-
-                    ratingContainer.addEventListener('click', (event) => {
-                        if (event.target.classList.contains('star')) {
-                            const selectedRating = event.target.getAttribute('data-rating');
-                            calificacionInput.value = selectedRating;
-
-                            // Puedes agregar lógica adicional para resaltar las estrellas seleccionadas visualmente si es necesario
-                            // ...
-
-                            console.log('Calificación seleccionada:', selectedRating);
-                        }
-                    });
-
-                    // JavaScript para enviar el formulario al hacer clic en el botón
-                    const submitButton = document.getElementById('submit-rating');
-                    const calificacionForm = document.getElementById('calificacion-form');
-
-                    submitButton.addEventListener('click', () => {
-                        calificacionForm.submit();
-                    });
-                </script>
-                <p class="result"><span id="rating"></span></p>
-                <form action="{{ route('añadirALista') }}" method="POST" id="formAñadirALista">
-                    @csrf
-                    <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
-                    <button type="submit" class="btn btn-primary">Agregar a mi lista</button>
-                </form>
-
-            </div>
         </div>
 
         <div class="row mt-5">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-3 tabla-contenido bkgTable ">
-
-                <div class="row border-bottom d-flex align-items-center">
-                    <div class="col-lg-1"></div>
-                    <div class="col col-lg-2 mt-1">
-                        <h6>#</h6>
-                    </div>
-
-                    <div class="col col-lg-5 mt-1">
-                        <h6>Capitulos</h6>
-                    </div>
-                    <div class="col col-g-2 mt-1">
-                        <h6>Visto</h6>
-                    </div>
+            <div class="col-lg-3 ml-5 bkgTable">
+                <div class="row d-flex ">
+                    <form class="d-flex f1" action="{{ route('registroLectura') }}" method="POST" id="formAñadirALista">
+                        @csrf
+                        <label for="id_capitulo">Capitulo:</label>
+                        <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
+                        <input type="number" value="{{ $capitulo }}" name="id_capitulo" id="inputIdCapitulo"
+                            value="">
+                        <button type="submit" class="btn btn-primary" class="mt-6">Guardar</button>
+                    </form>
                 </div>
-                <form id="checklist" class="mb-0">
-                    @for ($i = 1; $i <= $manga->capitulos; $i++)
-                        <div class="row">
-                            <div class="col-lg-1"></div>
-                            <div class="col col-lg-2">
-                                {{ $i }}
-                            </div>
-                            <div class="col col-lg-5">Capitulo {{ $i }}</div>
-                            <div class="col col-lg-2">
-                                <input class="form-check-input ml-2 checkbox" type="checkbox"
-                                       value="{{ $i }}" id="flexCheckDefault{{$i}}" data-value="{{$i}}">
-                            </div>
-                        </div>
-                    @endfor
-                </form>
-                
-                <form action="{{ route('registroLectura') }}" method="POST" id="formAñadirALista">
-                    @csrf
-                    <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
-                    <input type="hidden" name="id_capitulo" id="inputIdCapitulo" value="">
-                    <button type="submit" class="btn btn-primary">Guardar Registro</button>
-                </form>
-                
-                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-                <script>
-                    $(document).ready(function () {
-                        $("#formAñadirALista").submit(function (event) {
-                            var maxChecked = Math.max.apply(null, $(".checkbox:checked").map(function () {
-                                return parseInt($(this).data("value"));
-                            }).get());
-                
-                            $("#inputIdCapitulo").val(maxChecked);
-                
-                            return true;
-                        });
-                    });
-                </script>
-                
+                <div class=" r1">
+                    Tu progreso
+                    <div class="progress">
+                        <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" role="progressbar" style="width: {{$porcentaje}}%" aria-valuenow="{{$porcentaje}}"
+                            aria-valuemin="0" aria-valuemax="100">{{$porcentaje}}</div>
+
+                    </div>
 
 
-                </tbody>
-                </table>
+                </div>
+
             </div>
             <div class="col-lg-1"></div>
+
             <div class="col">
                 <h3>Comentarios</h3>
 
@@ -297,5 +283,6 @@
             </div>
 
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script src="assets/js/manga.js"></script>
     @endsection
