@@ -110,7 +110,7 @@ foreach ($generos as $gg) {
 
                         <li>
                             <div class="ctn-search">
-                                <form action="busqueda.blade.php" method="GET">
+                                <form action="{{ route('busqueda')}}" method="GET">
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" placeholder="Buscar..." name="query">
                                         <div id= bt-search class="input-group-append">
