@@ -6,26 +6,14 @@
 
 @section('content')
 <div class="titulo">
-    <h1>Busqueda (nombre de la busqueda)</h1>
+    <h1>Resultados de la busqueda para "{{$query }}"</h1>
 
-
-            <div class="press-container">
-                <div class="press">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">hola mundo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="press">
-                    <div class="card" style="width: 18rem;">
-                        <img src="..\public\assets\img\Apotheosis.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">hola mundo</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        @foreach ($resultados as $manga)
+        <p>{{$mangas->titulo}}</p>
+        <p>{{$mangas->descripcion}}</p>
+        <p>{{$mangas->portada}}</p>
+        
+        @endforeach
+           
             
     @endsection
