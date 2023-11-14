@@ -159,4 +159,15 @@ time {
     border-radius: 20px;
 
 }
+#comment-section {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 20px;
+}
 
+/* Estilo para cada comentario en la lista */
+#comment-section .comment-container li {
+    color: #000000; /* Texto blanco */
+    background-color: #ffffff; 
+    margin-bottom: 10px;
+}

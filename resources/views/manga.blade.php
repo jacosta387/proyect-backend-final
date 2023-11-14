@@ -7,32 +7,39 @@
     $mangas = $mangaController->obtenerMangas();
     $calificaciones = $dbController->obtenerCalificaciones();
     $comentarios = $dbController->obtenerComentarios();
+    $usuarios = $dbController->obtenerUsuarios();
 
     #El manga de esta pestaña se llamará $manga
+    // Obtener el manga por ID
     foreach ($mangas as $m) {
         if ($m->id_manga == $id) {
-            # code...
             $manga = $m;
         }
     }
 
+    // Obtener las calificaciones del manga
     $calificacionesManga = [];
     foreach ($calificaciones as $c) {
         if ($c->id_manga == $id) {
-            # code...
             $calificacionesManga[] = $c;
         }
     }
 
-    #Variable para almacenar el promedio
+    // Variable para almacenar el promedio
     $promedioCalificacion = 0;
 
+    // Obtener los comentarios del manga
     $comentariosManga = [];
     foreach ($comentarios as $c) {
         if ($c->id_manga == $id) {
-            # code...
             $comentariosManga[] = $c;
         }
+    }
+
+    $arrayUsers = [];
+    foreach ($usuarios as $u) {
+        # code...
+        $arrayUsers[$u->id] = $u->name;
     }
 
 @endphp
@@ -97,34 +104,35 @@
                     </div>
                     <button type="button" id="submit-rating" class="btn btn-primary">Calificar</button>
                 </div>
-                
+
                 <form action="{{ route('guardarCalificacion') }}" method="POST" id="calificacion-form">
                     @csrf
                     <input type="hidden" name="id_manga" value="{{ $id }}">
-                    <input type="hidden" name="calificacion" id="calificacion-input" value="1"> <!-- Valor predeterminado -->
+                    <input type="hidden" name="calificacion" id="calificacion-input" value="1">
+                    <!-- Valor predeterminado -->
                 </form>
-                
+
                 <script>
                     // JavaScript para manejar la calificación
                     const ratingContainer = document.getElementById('star-rating');
                     const calificacionInput = document.getElementById('calificacion-input');
-                
+
                     ratingContainer.addEventListener('click', (event) => {
                         if (event.target.classList.contains('star')) {
                             const selectedRating = event.target.getAttribute('data-rating');
                             calificacionInput.value = selectedRating;
-                
+
                             // Puedes agregar lógica adicional para resaltar las estrellas seleccionadas visualmente si es necesario
                             // ...
-                
+
                             console.log('Calificación seleccionada:', selectedRating);
                         }
                     });
-                
+
                     // JavaScript para enviar el formulario al hacer clic en el botón
                     const submitButton = document.getElementById('submit-rating');
                     const calificacionForm = document.getElementById('calificacion-form');
-                
+
                     submitButton.addEventListener('click', () => {
                         calificacionForm.submit();
                     });
@@ -165,7 +173,7 @@
                 </table>
             </div>
             <div class="col">
-                <h3>Comments:</h3>
+                <h3>Comentarios</h3>
                 <form action="{{ route('guardarComentario') }}" method="POST">
                     @csrf
                     <input type="hidden" name="id_manga" value="{{ $id }}">
@@ -174,32 +182,32 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar comentario</button>
                 </form>
-
-                <div id="comment-section">
-
-                    <div class="comment-container mr-4 ml-4">
-                        <div class=" row comment-head">
-                            <div class="gp-comment-meta">
-                                <span class="gp-comment-author" itemprop="author">Felipe</span>
-                                <br>
-                                <time class="gp-comment-date-time" itemprop="datePublished"
-                                    datetime="2023-02-06T08:25:57-05:00">06/02/2023, 8:25 am</time>
+                <!-- Comentarios -->
+                            <div class="comment-section">
+                                <!-- Comentarios -->
+                                @if (count($comentariosManga) > 0)
+                                    @foreach (array_reverse($comentariosManga) as $comentario)
+                                        <div class="comment-container mr-4 ml-4 mt-1">
+                                            <div class="row comment-head">
+                                                <div class="gp-comment-meta">
+                                                    <span class="gp-comment-author"
+                                                        itemprop="author">{{ $arrayUsers[$comentario->id_usuario] }}</span>
+                                                    <br>
+                                                    <time class="gp-comment-date-time" itemprop="datePublished"
+                                                        datetime="{{ $comentario->created_at }}">{{ $comentario->created_at }}</time>
+                                                </div>
+                                            </div>
+                                            <div class="row comment-body">
+                                                <p>{{ $comentario->comentario }}</p>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @else
+                                <p>No se encontron comentarios</p>
+                                @endif
                             </div>
-                        </div>
-
-                        <div class="row comment-body">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe esse neque nemo veritatis!
-                                Tempore corporis doloribus molestiae, voluptate consequatur velit ea possimus soluta? Vitae
-                                autem fugit quisquam culpa aspernatur possimus.</p>
-                        </div>
-
-
                     </div>
-                </div>
+
             </div>
-
-        </div>
-
-    </div>
-    <script src="assets/js/manga.js"></script>
-@endsection
+            <script src="assets/js/manga.js"></script>
+        @endsection
