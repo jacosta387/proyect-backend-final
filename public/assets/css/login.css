@@ -29,7 +29,7 @@ html,body {
 }
 .card{
 
-    background-color: rgba(0,0,0,0.5) !important;
+    background-color: rgba(0,0,0,0.7) !important;
     }
 
 
@@ -45,7 +45,7 @@ html,body {
 
 .input-group-prepend span{
     width: 50px;
-    background-color: #FFC312;
+    background-color: var(--color-fuccia2);
     color: black;
     border:0 !important;
 }
@@ -78,8 +78,8 @@ input:focus{
 
 .login_btn{
     color: black;
-    background-color: #FFC312 !important;
-    border-color: #FFC312 !important;
+    background-color: var(--color-fuccia2) !important;
+    border-color: var(--color-background) !important;
     width: 100px;
 }
 
@@ -88,6 +88,6 @@ input:focus{
     background-color: rgba(0,0,0,0.55) !important;
 }
 .links a{
-    color: #FFC312;
+    color: var(--color-fuccia2);
     }
 

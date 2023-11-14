@@ -28,7 +28,7 @@
             $manga = $m;
         }
     }
-
+    $promedioCalificacion =0;
     // Obtener las calificaciones del manga
     $calificacionesManga = [];
     foreach ($calificaciones as $c) {
@@ -36,38 +36,19 @@
             $calificacionesManga[] = $c;
         }
     }
-    
-    function calcularPromediomg($calificacionesManga) {
-    
-    if (!empty($calificacionesManga)) {
-       
-        $suma = array_sum($calificacionesManga);
-        
-        
-        $numCalificaciones = count($calificacionesManga);
-        
-        
-        $promedio = $suma / $numCalificaciones;
-        
-        
-        return $promedio;
-    } else {
-        
-        return "No hay calificaciones para promediar";
-    }
-}
-    $resultado = calcularPromedio($calificaciones);
 
+
+    $sumCalificaciones=0;
+    foreach ($calificacionesManga as $calificacion) {
+
+        $sumCalificaciones+=$calificacion->calificacion;
+    }
 
 
     #Variable para almacenar el promedio
-    $promedioCalificacion = $promedio;
-
-
-
-
-
-
+    if (count($calificacionesManga)!=0) {
+        $promedioCalificacion = $sumCalificaciones/count($calificacionesManga);
+    }
 
     // Obtener los comentarios del manga
     $comentariosManga = [];
