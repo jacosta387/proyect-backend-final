@@ -1,36 +1,59 @@
 /* variables de colores tamaños y fuentes */
 :root {
-    --color-background-elements:#210210;
-    --color-background:#2b0215;
+    --color-background-elements: #210210;
+    --color-background: #2b0215;
     --color-rosaClaro: #d24d6c;
-    --color-fucsia:#EE2853;
+    --color-fucsia: #EE2853;
     --color-txt-light: #f0f8ff;
-    --color-txt-dark:#1a000c;
-    --color-txt-secundary-light:#c79fb4;
+    --color-txt-dark: #1a000c;
+    --color-txt-secundary-light: #c79fb4;
     --font-size: 16px;
-    --font-family:'Abandon';
+    --font-family: 'Abandon';
 }
 
 
-.content{
+.content {
     margin-top: 10px;
     height: max-content;
     margin-bottom: 30px;
-    color: var(--color-txt-light ) !important;
+    color: var(--color-txt-light) !important;
 }
-.titulo,.descripcion{
+
+.titulo,
+.descripcion {
 
     margin-left: 10px;
 }
 
+.cajita {
+    height: 50%;
+    opacity: 50%;
+    text-align: center;
+    width: 8em !important;
+    display: inline-block !important;
+}
 
+.cajoncito {
+    width: fit-content !important;
+
+
+}
+
+h5 {
+    font-size: smaller !important;
+    color: var(--color-txt-secundary-light);
+
+}
 
 .press {
 
     position: fixed;
-    right: 10%; /* Set right position to 10% from the right edge */
-    top: 50%; /* Set vertical position to the middle */
-    transform: translateY(-50%); /* Adjust for vertical centering */
+    right: 10%;
+    /* Set right position to 10% from the right edge */
+    top: 50%;
+    /* Set vertical position to the middle */
+    transform: translateY(-50%);
+    /* Adjust for vertical centering */
     padding: 100px;
 }
 
@@ -49,16 +72,20 @@
     color: #FFD700;
     /* Color amarillo al seleccionar */
 }
+
 .rating-container {
-    display: flex; /* Apply flexbox layout */
-    align-items: center; /* Vertically align elements */
+    display: flex;
+    /* Apply flexbox layout */
+    align-items: center;
+    /* Vertically align elements */
 }
 
 .rating-container .rating {
-    margin-right: 10px; /* Add some space between rating and button */
+    margin-right: 10px;
+    /* Add some space between rating and button */
 }
 
-.tags{
+.tags {
     font-size: small;
     background-color: var(--color-rosaClaro);
     width: fit-content;
@@ -67,31 +94,37 @@
     text-decoration: none;
 }
 
-.btn{
+.btn {
     background-color: var(--color-fucsia) !important;
     border-color: var(--color-background-elements) !important;
 }
 
-.tabla-contenido{
+.tabla-contenido {
     margin-top: 5%;
     margin-left: 2%;
     width: fit-content;
     border: 0;
     border-radius: 15px;
 }
-.bkgTable,td,th{
+
+.bkgTable,
+td,
+th {
     background-color: var(--color-rosaClaro) !important;
     color: var(--color-txt-dark) !important;
     border: 0;
     border-radius: 15px;
 }
-thead.td{
+
+thead.td {
     background-color: #1a000c;
 }
-th{
+
+th {
     border-top: none !important;
 }
-.bkgTable{
+
+.bkgTable {
 
     border-bottom: none !important;
     border: 0;
@@ -102,24 +135,28 @@ th{
 .form-check-input:checked {
     background-color: var(--color-txt-dark) !important;
     border-color: var(--color-background) !important;
-  }
+}
 
-.comment-container,.comment{
+.comment-container,
+.comment {
     padding: 8px;
     width: 90%;
     border: 0;
     border-radius: 15px;
     background-color: var(--color-background-elements);
 }
-time{
+
+time {
     color: var(--color-txt-secundary-light) !important;
     padding: 8px;
 }
-.comment-body{
-    margin:18px !important;
+
+.comment-body {
+    margin: 18px !important;
     padding: 8px;
     background-color: rgba(0, 0, 0, 0.5);
     border: 0;
     border-radius: 20px;
 
 }
+

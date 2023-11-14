@@ -3,27 +3,37 @@
 @inject('dbController', 'App\Http\Controllers\DBController')
 @inject('mangaController', 'App\Http\Controllers\MangaController')
 @php
-    $id=$_GET['manga'];
+    $id = $_GET['manga'];
     $mangas = $mangaController->obtenerMangas();
-    $calificaciones= $dbController->obtenerCalificaciones();
-    $comentarios= $dbController->obtenerComentarios();
+    $calificaciones = $dbController->obtenerCalificaciones();
+    $comentarios = $dbController->obtenerComentarios();
 
     #El manga de esta pestaña se llamará $manga
     foreach ($mangas as $m) {
-        if ($m->id_manga==$id) {
+        if ($m->id_manga == $id) {
             # code...
-            $manga=$m;
+            $manga = $m;
         }
     }
 
-    $calificacionesManga= array();
+    $calificacionesManga = [];
     foreach ($calificaciones as $c) {
-        if ($c->id_manga==$id) {
+        if ($c->id_manga == $id) {
             # code...
-            $calificacionesManga[]=$c;
+            $calificacionesManga[] = $c;
         }
     }
 
+    #Variable para almacenar el promedio
+    $promedioCalificacion = 0;
+
+    $comentariosManga = [];
+    foreach ($comentarios as $c) {
+        if ($c->id_manga == $id) {
+            # code...
+            $comentariosManga[] = $c;
+        }
+    }
 
 @endphp
 <link rel="stylesheet" href="assets/css/manga.css">
@@ -40,20 +50,45 @@
 
             </div>
             <div class="col desc col-lg-6">
-                <div class="titulo">
-                    <h1>{{$manga->titulo}}</h1>
-                    <p class="tags">Finalizado</p>
+                <div class="titulo row ">
+                    <div class="col">
+                        <h1>{{ $manga->titulo }}</h1>
+                        <p class="tags">Finalizado</p>
+                    </div>
+                    <div class="col-lg-3 ">
+
+                        {{-- <div class="row cajita">
+                            <div class="col-sm border-right border-left cajoncito">
+                                <div class="row ">
+                                    <h5>Votos:</h5>
+                                </div>
+                                <div class="row">
+                                    <p>{{ $promedioCalificacion }}</p>
+                                </div>
+                            </div>
+                            <div class="col-sm border-right cajoncito">
+                                <div class="row">
+                                    <h5>Capitulos:</h5>
+                                </div>
+                                <div class="row">
+                                    <p>{{ $promedioCalificacion }}</p>
+                                </div>
+                            </div>
+
+                        </div> --}}
+
+                    </div>
+
                 </div>
-                <div class="descripcion">
+                <div class="descripcion row">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque fugit quis accusamus labore? Ut cumque
                     impedit qui recusandae similique, suscipit fugit minima mollitia voluptas, modi reprehenderit quas ea
                     aliquid saepe.
                 </div>
             </div>
             <div class="col mt-5">
-
                 <div class="rating-container">
-                    <div class="rating">
+                    <div class="rating ">
                         <span class="star" data-rating="1">&#9733;</span>
                         <span class="star" data-rating="2">&#9733;</span>
                         <span class="star" data-rating="3">&#9733;</span>
@@ -111,21 +146,24 @@
                             <div class="gp-comment-meta">
                                 <span class="gp-comment-author" itemprop="author">Felipe</span>
                                 <br>
-                                <time class="gp-comment-date-time" itemprop="datePublished" datetime="2023-02-06T08:25:57-05:00">06/02/2023, 8:25 am</time>
+                                <time class="gp-comment-date-time" itemprop="datePublished"
+                                    datetime="2023-02-06T08:25:57-05:00">06/02/2023, 8:25 am</time>
                             </div>
                         </div>
 
                         <div class="row comment-body">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe esse neque nemo veritatis! Tempore corporis doloribus molestiae, voluptate consequatur velit ea possimus soluta? Vitae autem fugit quisquam culpa aspernatur possimus.</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe esse neque nemo veritatis!
+                                Tempore corporis doloribus molestiae, voluptate consequatur velit ea possimus soluta? Vitae
+                                autem fugit quisquam culpa aspernatur possimus.</p>
                         </div>
 
 
                     </div>
-                  </div>
+                </div>
             </div>
 
         </div>
-        <p>Hello world</p>
+
     </div>
     <script src="assets/js/manga.js"></script>
 @endsection
