@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--color-background);
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 #app {
     flex: 1;
@@ -26,7 +26,7 @@ body {
 
 .navbar {
     background-color: var(--color-background-elements) !important;
-    margin-bottom: 40px;
+    
 }
 .navbar-brand {
     color: var(--color-txt-light) !important;

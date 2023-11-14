@@ -153,21 +153,17 @@
                 <div class="col mt-5">
                     <div class="rating-container">
                         <div class="rating ">
-                            <span class="star" data-rating="1">&#9733;</span>
-                            <span class="star" data-rating="2">&#9733;</span>
-                            <span class="star" data-rating="3">&#9733;</span>
-                            <span class="star" data-rating="4">&#9733;</span>
-                            <span class="star" data-rating="5">&#9733;</span>
+                            <span class="star" data-rating="1" onclick="document.getElementById('calificacion-input').value=1;">&#9733;</span>
+                            <span class="star" data-rating="2" onclick="document.getElementById('calificacion-input').value=2;">&#9733;</span>
+                            <span class="star" data-rating="3" onclick="document.getElementById('calificacion-input').value=3;">&#9733;</span>
+                            <span class="star" data-rating="4" onclick="document.getElementById('calificacion-input').value=4;">&#9733;</span>
+                            <span class="star" data-rating="5" onclick="document.getElementById('calificacion-input').value=5 ;">&#9733;</span>
                         </div>
-                        @guest
-                            <button type="button" id="submit-rating" class="btn btn-primary"
-                                onclick="event.preventDefault();
-                            document.getElementById('login-form').submit();">Calificar</button>
-                        @else
-                            <button type="button" id="submit-rating" class="btn btn-primary"
+
+                        <button type="button" id="submit-rating" class="btn btn-primary"
                                 onclick="event.preventDefault();
                             document.getElementById('calificacion-form').submit();">Calificar</button>
-                        @endguest
+
 
                     </div>
                     <form action="{{ route('login') }}" method="get" id="login-form"></form>

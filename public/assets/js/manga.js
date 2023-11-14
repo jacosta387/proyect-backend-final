@@ -12,27 +12,9 @@ stars.forEach(star => {
         for (let i = 0; i < rating; i++) {
             stars[i].classList.add('selected');
         }
-
-        // Aquí puedes enviar la calificación al servidor si es necesario.
     });
 });
 
-// Obtén todos los elementos de clase "checkbox"
-const checkboxes = document.querySelectorAll('.checkbox');
-
-checkboxes.forEach(checkbox=> {
-    checkbox.addEventListener('click', ()=> {
-        // Desmarca todos los checkboxes
-        const valor=checkbox.getAttribute('data-value');
-
-        checkboxes.forEach(s=>s.classList.remove('selected'));
-        // Marca el checkbox actual
-
-        for (let i = 0; i < valor; i++) {
-            checkboxes[i].classList.add('selected');
-        }
-    });
-});
 
 const lectura = document.querySelector(".lectura");
 const inputCapitulos = document.querySelector("#capitulos");
