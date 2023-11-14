@@ -123,7 +123,7 @@
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <center><a href={{ $manga->link }} target="_blank">Ir al manga</a></center>
+                            <center><a class="ml-5" href={{ $manga->link }} target="_blank">Ir al manga</a></center>
                         </div>
                     </div>
 
@@ -188,34 +188,48 @@
                     });
                 </script>
                 <p class="result"><span id="rating"></span></p>
-                <a href="#" class="btn btn-primary">Agregar a mi lista</a>
+                <form action="{{ route('añadirALista') }}" method="POST" id="formAñadirALista">
+                    @csrf
+                    <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
+                    <button type="submit" class="btn btn-primary">Agregar a mi lista</button>
+                </form>
 
             </div>
         </div>
 
         <div class="row mt-5">
             <div class="col-lg-1"></div>
-            <div class="col-lg-3 tabla-contenido ">
-                <table class="table table-rounded bkgTable">
-                    <thead>
-                        <tr class="text-center">
-                            <th scope="col" colspan="2">Capitulos</th>
-                            <th scope="col " class="text-left">Visto</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-group-divider">
+            <div class="col-lg-3 tabla-contenido bkgTable ">
 
-                        @for ($i = 1; $i <= $manga->capitulos; $i++)
-                            <tr>
-                                <th scope="row">{{ $i }}</th>
-                                <td>Capitulo {{ $i }} </td>
-                                <td><input class="form-check-input ml-2" type="checkbox" value=""
-                                        id="flexCheckDefault"></td>
-                            </tr>
-                        @endfor
+                <div class="row border-bottom d-flex align-items-center">
+                    <div class="col-lg-1"></div>
+                    <div class="col col-lg-2 mt-1">
+                        <h6>#</h6>
+                    </div>
+
+                    <div class="col col-lg-5 mt-1">
+                        <h6>Capitulos</h6>
+                    </div>
+                    <div class="col col-g-2 mt-1">
+                        <h6>Visto</h6>
+                    </div>
+                </div>
+                <form id="checklist" class="mb-0">
+                    @for ($i = 1; $i <= $manga->capitulos; $i++)
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col col-lg-2">
+                                {{ $i }}
+                            </div>
+                            <div class="col col-lg-5">Capitulo {{ $i }}</div>
+                            <div class="col col-lg-2"><input class="form-check-input ml-2 checkbox" type="checkbox"
+                                    value="{{ $i }}" id="flexCheckDefault" data-value="{{$i}}"></div>
+                        </div>
+                    @endfor
+                </form>
 
 
-                    </tbody>
+                </tbody>
                 </table>
             </div>
             <div class="col-lg-1"></div>
