@@ -43,8 +43,8 @@ foreach ($generos as $gg) {
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 
-
-
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -108,7 +108,15 @@ foreach ($generos as $gg) {
 
 
                         <li>
-
+                            <div class="ctn-search">
+                                <form action="busqueda.blade.php" method="GET">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Buscar..." name="query">
+                                        <div id= bt-search class="input-group-append">
+                                            <button class="btn btn-outline-secondary" type="submit"><i class="material-icons">search</i></button>
+                                        </div>
+                                    </div>
+                                </form>
                         </li>
                     </ul>
 
