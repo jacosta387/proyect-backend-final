@@ -30,15 +30,19 @@ class DBController extends Controller
     }
 
     public function guardarComentario(Request $request){
-        $idUsuario = Auth::id();
-        $comentario = new Comentario;
+        if (Auth::check()) {
+            $idUsuario = Auth::id();
+            $comentario = new Comentario;
 
-        $comentario->id_usuario = $idUsuario;
-        $comentario->id_manga = $request->input('id_manga');
-        $comentario->comentario = $request->input('comentario');
-        $comentario->save();
+            $comentario->id_usuario = $idUsuario;
+            $comentario->id_manga = $request->input('id_manga');
+            $comentario->comentario = $request->input('comentario');
+            $comentario->save();
 
-        return back();
+            return back();
+        } else {
+            return redirect()->route('login');
+        }
     }
 
 }
