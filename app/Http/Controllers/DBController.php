@@ -44,5 +44,20 @@ class DBController extends Controller
             return redirect()->route('login');
         }
     }
+    public function guardarCalificacion(Request $request){
+        if (Auth::check()) {
+            $idUsuario = Auth::id();
+            $calificacion = new Calificacion;
+
+            $calificacion->id_usuario = $idUsuario;
+            $calificacion->id_manga = $request->input('id_manga');
+            $calificacion->calificacion = $request->input('calificacion');
+            $calificacion->save();
+
+            return back();
+        } else {
+            return redirect()->route('login');
+        }
+    }
 
 }
