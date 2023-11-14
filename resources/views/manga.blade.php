@@ -36,9 +36,38 @@
             $calificacionesManga[] = $c;
         }
     }
+    
+    function calcularPromediomg($calificacionesManga) {
+    
+    if (!empty($calificacionesManga)) {
+       
+        $suma = array_sum($calificacionesManga);
+        
+        
+        $numCalificaciones = count($calificacionesManga);
+        
+        
+        $promedio = $suma / $numCalificaciones;
+        
+        
+        return $promedio;
+    } else {
+        
+        return "No hay calificaciones para promediar";
+    }
+}
+    $resultado = calcularPromedio($calificaciones);
 
-    // Variable para almacenar el promedio
-    $promedioCalificacion = 0;
+
+
+    #Variable para almacenar el promedio
+    $promedioCalificacion = $promedio;
+
+
+
+
+
+
 
     // Obtener los comentarios del manga
     $comentariosManga = [];
@@ -87,11 +116,13 @@
                                 <br>
                                 {{ $promedioCalificacion }}
 
+
                             </div>
                             <div class="nav-item col-lg-4 col   cajita">
                                 Caps
                                 <br>
                                 {{ $manga->capitulos }}
+
 
                             </div>
                         </div>
