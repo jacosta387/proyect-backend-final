@@ -10,7 +10,7 @@ class MangaController extends Controller
     public function guardar(Request $request)
     {
        $manga = new Manga;
-    
+
        $manga->titulo = $request->input('titulo');
        $manga->id_genero = $request->input('id_genero');
        $manga->descripcion = $request->input('descripcion');
@@ -18,9 +18,19 @@ class MangaController extends Controller
        $manga->fecha_lanzamiento = $request->input('fechaLanzamiento');
        $manga->publicado = $request->has('publicado'); // Si checkbox está marcado, será true, de lo contrario será false
        $manga->link = $request->input('link');
-    
+
        $manga->save();
-    
+
+
        return redirect('/manga'); // Puedes redirigir a donde desees después de guardar
+    }
+
+    public function obtenerMangas(){
+        return Manga::all();
+    }
+    public function listarMangas()
+    {
+        $mangas = Manga::all();
+        return view('tu-vista')->with('mangas', $mangas);
     }
 }

@@ -1,34 +1,35 @@
 /* variables de colores tamaños y fuentes */
 :root {
-    --color-background-elements:#210210;
-    --color-background:#2b0215;
+    --color-background-elements: #210210;
+    --color-background: #2b0215;
     --color-rosaClaro: #d24d6c;
-    --color-fuccia:#EE2853;
-    --color-fucsia:#EE2853;
+    --color-fuccia: #EE2853;
+    --color-fucsia: #EE2853;
     --color-txt-light: #f0f8ff;
-    --color-txt-dark:#1a000c;
+    --color-txt-dark: #1a000c;
     --font-size: 16px;
-    --font-family:'Abandon';
+    --font-family: 'Abandon';
 }
 
 
-body{
+body {
     color: var(--color-txt-light) !important;
-    background-color: var(--color-background)!important;
-}
-h1{
-    color:var(--color-txt-light) !important;
+    background-color: var(--color-background) !important;
 }
 
-.content{
-  margin: 0px 20px 30px 30px;
+h1 {
+    color: var(--color-txt-light) !important;
+}
+
+.content {
+    margin: 0px 20px 30px 30px;
 }
 
 /* .card{
     background-color: #8f2f45 !important;
 
 } */
-.card-header{
+.card-header {
     color: var(--color-txt-light) !important;
 }
 
@@ -36,83 +37,109 @@ h1{
 
 .carousel-control-prev,
 .carousel-control-next {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .carousel-slide {
-  margin-right: 30px;
-  margin-bottom: 30px;
-  margin-top: 10px;
-  margin-left: 20px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-left: 20px;
 }
+
 .img-carousel {
-  width: 300px; /* Ancho deseado */
-  height: 500px; /* Altura deseada */
+    width: 300px;
+    /* Ancho deseado */
+    height: 500px;
+    /* Altura deseada */
 }
+
 .press-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .press {
-display: flex;
-  flex-wrap: wrap;
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  flex: 1;
-  max-width: calc(20% - 20px); /* Esto garantiza que haya 4 tarjetas por fila */
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    flex: 1;
+    max-width: calc(20% - 20px);
+    /* Esto garantiza que haya 4 tarjetas por fila */
 }
+
 .img-press {
-  width: 100%; /* Ancho deseado */
-  height: 350px; /* Altura deseada */
+    width: 100%;
+    /* Ancho deseado */
+    height: 350px;
+    /* Altura deseada */
+}
+.card-text {
+    color: var(--color-background) !important;
+    font-size: larger !important;
 }
 
 @media (max-width: 768px) {
-  .press {
-      max-width: calc(50% - 20px); /* En pantallas más pequeñas, muestra 2 tarjetas por fila */
-  }
+    .press {
+        max-width: calc(50% - 20px);
+        /* En pantallas más pequeñas, muestra 2 tarjetas por fila */
+    }
+
+    .card-text {
+        font-size: large !important;
+    }
 }
 
 @media (max-width: 480px) {
-  .press {
-      max-width: 100%; /* En pantallas aún más pequeñas, muestra 1 tarjeta por fila */
-  }
+    .press {
+        max-width: 100%;
+        /* En pantallas aún más pequeñas, muestra 1 tarjeta por fila */
+    }
+    .card-text {
+        font-size: medium !important;
+    }
 }
 
 .content2 {
-  border-bottom: 1px solid rgb(255, 255, 255);
-  margin-top: 10px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
-.titulo1 {
-  color: var(--color-textos-blanco);
-  text-align: center;
-}
-.content3 {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-/* Estilo para el fondo especial */
-.special-background {
-  background-color: #d24d6c; /* Cambia el color de fondo a naranja o el color que desees */
-  color: white; /* Cambia el color del texto a blanco o el color que desees */
 
+.titulo1 {
+    color: var(--color-textos-blanco);
+    text-align: center;
 }
+
+.content3 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.card-img-top {
+    width: 100%;
+    /* Ancho deseado */
+    height: 350px;
+    /* Altura deseada */
+}
+
+
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DBController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\MangaController;
@@ -31,3 +32,11 @@ Route::get('/save-manga',function(){
     return "Manga Guardado";
 });
 Route::post('/save-manga', [MangaController::class, 'guardar']);
+
+Route::get('/home',function () {
+    return view('home');
+});
+
+Route::post('/guardarComentario', [DBController::class, 'guardarComentario'])->name('guardarComentario');
+Route::post('/guardarCalificacion', [DBController::class, 'guardarCalificacion'])->name('guardarCalificacion');
+Route::post('/añadirALista', [DBController::class, 'añadirALista'])->name('añadirALista');

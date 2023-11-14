@@ -1,5 +1,68 @@
 @extends('layouts.app')
 
+@inject('dbController', 'App\Http\Controllers\DBController')
+@inject('mangaController', 'App\Http\Controllers\MangaController')
+@php
+    $id = $_GET['manga'];
+    $mangas = $mangaController->obtenerMangas();
+    $calificaciones = $dbController->obtenerCalificaciones();
+    $comentarios = $dbController->obtenerComentarios();
+
+    #El manga de esta pestaña se llamará $manga
+    foreach ($mangas as $m) {
+        if ($m->id_manga == $id) {
+            # code...
+            $manga = $m;
+        }
+    }
+
+    $calificacionesManga = [];
+    foreach ($calificaciones as $c) {
+        if ($c->id_manga == $id) {
+            # code...
+            $calificacionesManga[] = $c;
+        }
+    }
+    
+    function calcularPromediomg($calificacionesManga) {
+    
+    if (!empty($calificacionesManga)) {
+       
+        $suma = array_sum($calificacionesManga);
+        
+        
+        $numCalificaciones = count($calificacionesManga);
+        
+        
+        $promedio = $suma / $numCalificaciones;
+        
+        
+        return $promedio;
+    } else {
+        
+        return "No hay calificaciones para promediar";
+    }
+}
+    $resultado = calcularPromedio($calificaciones);
+
+
+    #Variable para almacenar el promedio
+    $promedioCalificacion = $promedio;
+
+
+
+
+
+
+    $comentariosManga = [];
+    foreach ($comentarios as $c) {
+        if ($c->id_manga == $id) {
+            # code...
+            $comentariosManga[] = $c;
+        }
+    }
+
+@endphp
 <link rel="stylesheet" href="assets/css/manga.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
@@ -14,20 +77,45 @@
 
             </div>
             <div class="col desc col-lg-6">
-                <div class="titulo">
-                    <h1>Aphoteosis</h1>
-                    <p class="tags">Finalizado</p>
+                <div class="titulo row ">
+                    <div class="col">
+                        <h1>{{ $manga->titulo }}</h1>
+                        <p class="tags">Finalizado</p>
+                    </div>
+                    <div class="col-lg-3 ">
+
+                        <div class="row cajita">
+                            <div class="col-sm border-right border-left cajoncito">
+                                <div class="row ">
+                                    <h5>Votos:</h5>
+                                </div>
+                                <div class="row">
+                                    <p>{{ $promedioCalificacion }}</p>
+                                </div>
+                            </div>
+                            <div class="col-sm border-right cajoncito">
+                                <div class="row">
+                                    <h5>Capitulos:</h5>
+                                </div>
+                                <div class="row">
+                                    <p>{{ $promedioCalificacion }}</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="descripcion">
+                <div class="descripcion row">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque fugit quis accusamus labore? Ut cumque
                     impedit qui recusandae similique, suscipit fugit minima mollitia voluptas, modi reprehenderit quas ea
                     aliquid saepe.
                 </div>
             </div>
             <div class="col mt-5">
-
                 <div class="rating-container">
-                    <div class="rating">
+                    <div class="rating" id="star-rating">
                         <span class="star" data-rating="1">&#9733;</span>
                         <span class="star" data-rating="2">&#9733;</span>
                         <span class="star" data-rating="3">&#9733;</span>
@@ -36,8 +124,44 @@
                     </div>
                     <button type="button" id="submit-rating" class="btn btn-primary">Calificar</button>
                 </div>
+                
+                <form action="{{ route('guardarCalificacion') }}" method="POST" id="calificacion-form">
+                    @csrf
+                    <input type="hidden" name="id_manga" value="{{ $id }}">
+                    <input type="hidden" name="calificacion" id="calificacion-input" value="1"> <!-- Valor predeterminado -->
+                </form>
+                
+                <script>
+                    // JavaScript para manejar la calificación
+                    const ratingContainer = document.getElementById('star-rating');
+                    const calificacionInput = document.getElementById('calificacion-input');
+                
+                    ratingContainer.addEventListener('click', (event) => {
+                        if (event.target.classList.contains('star')) {
+                            const selectedRating = event.target.getAttribute('data-rating');
+                            calificacionInput.value = selectedRating;
+                
+                            // Puedes agregar lógica adicional para resaltar las estrellas seleccionadas visualmente si es necesario
+                            // ...
+                
+                            console.log('Calificación seleccionada:', selectedRating);
+                        }
+                    });
+                
+                    // JavaScript para enviar el formulario al hacer clic en el botón
+                    const submitButton = document.getElementById('submit-rating');
+                    const calificacionForm = document.getElementById('calificacion-form');
+                
+                    submitButton.addEventListener('click', () => {
+                        calificacionForm.submit();
+                    });
+                </script>
                 <p class="result"><span id="rating"></span></p>
-                <a href="#" class="btn btn-primary">Agregar a mi lista</a>
+                <form action="{{ route('añadirALista') }}" method="POST" id="formAñadirALista">
+                    @csrf
+                    <input type="hidden" name="id_manga" id="inputIdManga" value="{{ $id }}">
+                    <button type="submit" class="btn btn-primary">Agregar a mi lista</button>
+                </form>
 
             </div>
         </div>
@@ -69,9 +193,11 @@
             </div>
             <div class="col">
                 <h3>Comments:</h3>
-                <form>
+                <form action="{{ route('guardarComentario') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id_manga" value="{{ $id }}">
                     <div class="form-group comment">
-                        <textarea class="form-control" rows="4"></textarea>
+                        <textarea class="form-control" name="comentario" rows="4"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar comentario</button>
                 </form>
@@ -83,21 +209,24 @@
                             <div class="gp-comment-meta">
                                 <span class="gp-comment-author" itemprop="author">Felipe</span>
                                 <br>
-                                <time class="gp-comment-date-time" itemprop="datePublished" datetime="2023-02-06T08:25:57-05:00">06/02/2023, 8:25 am</time>
+                                <time class="gp-comment-date-time" itemprop="datePublished"
+                                    datetime="2023-02-06T08:25:57-05:00">06/02/2023, 8:25 am</time>
                             </div>
                         </div>
 
                         <div class="row comment-body">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe esse neque nemo veritatis! Tempore corporis doloribus molestiae, voluptate consequatur velit ea possimus soluta? Vitae autem fugit quisquam culpa aspernatur possimus.</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe esse neque nemo veritatis!
+                                Tempore corporis doloribus molestiae, voluptate consequatur velit ea possimus soluta? Vitae
+                                autem fugit quisquam culpa aspernatur possimus.</p>
                         </div>
 
 
                     </div>
-                  </div>
+                </div>
             </div>
 
         </div>
-        <p>Hello world</p>
+
     </div>
     <script src="assets/js/manga.js"></script>
 @endsection

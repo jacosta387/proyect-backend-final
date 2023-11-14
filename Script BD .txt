@@ -1,0 +1,53 @@
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'ROBINSON LEON MORENO', 'rleon843@unab.edu.co', NULL, '123456', NULL, NULL, NULL),
+(2, 'JOSE ALFREDO ACOSTA PAEZ', 'jacosta387@unab.edu.co', NULL, '123456', NULL, NULL, NULL),
+(3, 'EMILTON FABIAN HERNANDEZ', 'ehernandez614@unab.edu.co ', NULL, '123456', NULL, NULL, NULL),
+(4, 'ANGHEL ANDRES GUTIERREZ', 'agutierrez739@unab.edu.co ', NULL, '123456', NULL, NULL, NULL),
+(5, 'FABIAN ENRIQUE SUAREZ', 'fsuarez120@unab.edu.co ', NULL, '123456', NULL, NULL, NULL);
+
+
+INSERT INTO `calificacion` (`id_calificacion`, `id_manga`, `id_usuario`, `calificacion`, `created_at`, `updated_at`) VALUES
+(1, 2, 1, 4, NULL, NULL),
+(2, 1, 2, 5, NULL, NULL),
+(3, 21, 3, 3, NULL, NULL),
+(4, 6, 4, 2, NULL, NULL),
+(5, 12, 5, 3, NULL, NULL),
+(6, 20, 1, 5, NULL, NULL),
+(7, 20, 3, 4, NULL, NULL),
+(8, 18, 4, 5, NULL, NULL),
+(9, 14, 2, 4, NULL, NULL),
+(10, 23, 5, 2, NULL, NULL);
+
+
+--
+-- Volcado de datos para la tabla `capitulo`
+--
+
+INSERT INTO `capitulo` (`id_capitulo`, `numero_cap`, `id_manga`, `nombre`, `created_at`, `updated_at`) VALUES
+(1, 11, 1, 'La batalla', NULL, NULL),
+(2, 21, 2, 'El paraiso perdido', NULL, NULL),
+(3, 31, 3, 'El milagro', NULL, NULL),
+(4, 41, 4, 'La Gran Pelea', NULL, NULL),
+(5, 51, 5, 'Perdidos', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`id_comentario`, `id_usuario`, `id_capitulo`, `id_manga`, `comentario`, `fecha_comentario`, `created_at`, `updated_at`) VALUES
+(1, 3, 1, 17, '¡Increíble viaje a tierras misteriosas! Los personajes me tienen enganchado y las ilustraciones son una maravilla. ¡Un manga que te transporta a otro mundo!', '2023-11-07', NULL, NULL),
+(2, 4, 5, 19, 'La química entre los protagonistas es simplemente adorable. Cada viñeta es como una escena romántica. ¡Este manga es la dosis perfecta de dulzura!', '0000-00-00', NULL, NULL),
+(3, 5, 5, 23, 'Las escenas de combate son épicas, llenas de acción y emoción. La historia está tan bien elaborada que te sumerges por completo en el Japón feudal. ¡Impresionante!', '2023-07-26', NULL, NULL),
+(4, 5, 2, 10, 'Este manga me tiene intrigado desde la primera página. Los elementos sobrenaturales mantienen el suspenso en cada capítulo. ¡No puedo esperar para descubrir el siguiente giro!', '2023-05-24', NULL, NULL),
+(5, 2, 4, 21, 'Futuros distópicos, tecnología avanzada y giros inesperados. Este manga de ciencia ficción es una montaña rusa emocional. ¡Cautivador de principio a fin!', '2023-10-09', NULL, NULL),
+(6, 3, 1, 15, 'Las situaciones cómicas en la escuela son tan divertidas y realistas. Los personajes son hilarantes, y cada capítulo te saca una sonrisa. ¡Perfecto para aliviar el estrés!', '2023-07-10', NULL, NULL),
+(7, 3, 4, 12, 'Una inmersión en la historia con personajes fuertes y eventos históricos bien representados. Este manga hace que aprendas mientras disfrutas de una narrativa apasionante.', '2023-09-06', NULL, NULL),
+(8, 1, 2, 22, 'Dragones, magia y un héroe en ascenso. Este manga de fantasía épica es un festín visual y narrativo. ¡Cada página es una obra maestra!', '2023-09-12', NULL, NULL),
+(9, 3, 5, 17, 'Las pequeñas historias cotidianas se convierten en experiencias encantadoras. Este manga captura la esencia de la vida diaria de una manera hermosa y conmovedora.', '2023-10-09', NULL, NULL),
+(10, 5, 3, 15, 'Giros de trama inesperados y un juego mental entre los personajes. Este manga te mantiene en vilo y cuestionando la realidad en cada página. ¡Una obra maestra del suspense!', '2023-10-17', NULL, NULL);
