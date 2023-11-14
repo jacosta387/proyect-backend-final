@@ -45,7 +45,7 @@
 
                     <div class="press">
                         <div class="card" style="width: 18rem;">
-                            <a href="{{ route('manga') }}">
+                            <a href="{{ route('manga',['manga' => $manga->id_manga]) }}">
                                 <img src="{{ $manga->portada }}" class="card-img-top" alt="...">
                             </a>
                             <div class="card-body">

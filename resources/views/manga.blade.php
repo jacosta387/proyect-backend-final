@@ -1,5 +1,31 @@
 @extends('layouts.app')
 
+@inject('dbController', 'App\Http\Controllers\DBController')
+@inject('mangaController', 'App\Http\Controllers\MangaController')
+@php
+    $id=$_GET['manga'];
+    $mangas = $mangaController->obtenerMangas();
+    $calificaciones= $dbController->obtenerCalificaciones();
+    $comentarios= $dbController->obtenerComentarios();
+
+    #El manga de esta pestaña se llamará $manga
+    foreach ($mangas as $m) {
+        if ($m->id_manga==$id) {
+            # code...
+            $manga=$m;
+        }
+    }
+
+    $calificacionesManga= array();
+    foreach ($calificaciones as $c) {
+        if ($c->id_manga==$id) {
+            # code...
+            $calificacionesManga[]=$c;
+        }
+    }
+
+
+@endphp
 <link rel="stylesheet" href="assets/css/manga.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
@@ -15,7 +41,7 @@
             </div>
             <div class="col desc col-lg-6">
                 <div class="titulo">
-                    <h1>Aphoteosis</h1>
+                    <h1>{{$manga->titulo}}</h1>
                     <p class="tags">Finalizado</p>
                 </div>
                 <div class="descripcion">
@@ -69,9 +95,11 @@
             </div>
             <div class="col">
                 <h3>Comments:</h3>
-                <form>
+                <form action="{{ route('guardarComentario') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id_manga" value="{{ $id }}">
                     <div class="form-group comment">
-                        <textarea class="form-control" rows="4"></textarea>
+                        <textarea class="form-control" name="comentario" rows="4"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar comentario</button>
                 </form>
