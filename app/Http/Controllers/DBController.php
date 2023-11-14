@@ -63,5 +63,26 @@ class DBController extends Controller
             return redirect()->route('login');
         }
     }
+    public function añadirALista(Request $request){
+        if (Auth::check()) {
+            $idUsuario = Auth::id();
+            $idManga = $request->input('id_manga');
+
+            // Verifica si el manga ya está en la lista del usuario
+            if (Guardado::where('id_usuario', $idUsuario)->where('id_manga', $idManga)->exists()) {
+                return back()->with('error', 'El manga ya está en tu lista.');
+            }
+
+            // Si no está en la lista, guárdalo
+            $guardado = new Guardado;
+            $guardado->id_usuario = $idUsuario;
+            $guardado->id_manga = $idManga;
+            $guardado->save();
+
+            return back()->with('success', 'Manga agregado a tu lista.');
+        } else {
+            return redirect()->route('login');
+        }
+    }
 
 }
