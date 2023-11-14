@@ -38,7 +38,7 @@ class MangaController extends Controller
 
     $manga->save();
 
-    return redirect('/home')->with('success', 'Manga guardado exitosamente.'); // Puedes agregar un mensaje de éxito si lo deseas
+    return redirect('/home')->with('success', 'Manga guardado exitosamente.'); 
 }
 
     public function obtenerMangas(){
