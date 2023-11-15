@@ -43,6 +43,7 @@
         }
     }
     $porcentaje=round(($capitulo/$manga->capitulos)*100,1);
+    
     $promedioCalificacion = 0;
     // Obtener las calificaciones del manga
     $calificacionesManga = [];

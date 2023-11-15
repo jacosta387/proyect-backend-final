@@ -6,18 +6,7 @@
 </script>
 @section('content')
     <div class="content mt-5 mb-5">
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-    </ul>
+        
         <div class="row justify-content-center c mt-5 c mb-4">
             <div class="col-md-3">
                 <div class="card">

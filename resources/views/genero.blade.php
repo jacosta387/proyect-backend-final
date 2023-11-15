@@ -25,14 +25,14 @@
 
             ?></h2>
         </div>
-        <hr class="mi-linea"> </hr>
+        <hr class="mi-linea"> 
     </div>
 
         <div class="press-container ">
 
             @foreach ($mangas as $manga)
 
-                {{-- <div>  
+                {{-- <div>
                         <h2>{{ $manga->titulo }}</h2>
                         <p> <img src={{ $manga->portada }} class="card-img-top" alt="...">';{{ $manga->descripcion }}</p>
 

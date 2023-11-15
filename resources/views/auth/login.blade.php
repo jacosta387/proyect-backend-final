@@ -10,18 +10,7 @@
 @section('content')
 
     <div class="content mt-5 mb-5">
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-    </ul>
+
         <div class="row justify-content-center mt-5 c mb-5">
             <div class="col-md-3">
                 <div class="card">
